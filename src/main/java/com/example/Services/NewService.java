@@ -139,7 +139,7 @@ public class NewService {
 //    }
 
     @RequestMapping(value = "/api/authenticate", method = RequestMethod.GET)
-    public String doSmth(String email, String password)
+    public int doSmth(String email, String password)
     {
         int userID;
         String uid = "";
@@ -149,15 +149,15 @@ public class NewService {
         userID = mySQLConfig.getLogin(email,password);
         mySQLConfig.closeConnection();
 
-        if(userID == -1)
-        {
-            uid = "error";
-        }
-        else
-        {
-            uid = Integer.toString(userID);
-        }
-        return uid;
+//        if(userID == -1)
+//        {
+//            uid = "error";
+//        }
+//        else
+//        {
+//            uid = Integer.toString(userID);
+//        }
+        return userID;
     }
 
     @RequestMapping(value = "/api/history", method = RequestMethod.GET)
