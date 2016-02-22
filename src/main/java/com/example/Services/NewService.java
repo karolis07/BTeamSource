@@ -147,8 +147,8 @@ public class NewService {
         MySQLConfig mySQLConfig = new MySQLConfig();
         mySQLConfig.connect();
 
-        email="admin@admin.lt";
-        password="admin";
+//        email="admin@admin.lt";
+//        password="admin";
 
         userID = mySQLConfig.getLogin(email,password);
         mySQLConfig.closeConnection();
