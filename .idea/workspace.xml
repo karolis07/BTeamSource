@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="539356fd-58ad-4620-b9b1-365d30102ae1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Services/NewService.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Services/NewService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java" />
     </list>
     <ignored path="US1_BTeam.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySQLConfig.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MySQLConfig.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="128" column="64" selection-start-line="128" selection-start-column="64" selection-end-line="128" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.5160142">
+              <caret line="114" column="13" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
               <folding>
                 <element signature="e#4542#4569#0" expanded="true" />
                 <element signature="e#4626#4634#0" expanded="true" />
@@ -68,15 +68,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NewService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Services/NewService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57651246">
-              <caret line="149" column="25" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="152" column="11" selection-start-line="152" selection-start-column="11" selection-end-line="152" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1389#1416#0" expanded="true" />
-                <element signature="e#5589#5616#0" expanded="true" />
+                <element signature="e#5694#5721#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -584,8 +584,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/pages/home.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/pages/login.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/index.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/Services/NewService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java" />
       </list>
     </option>
   </component>
@@ -1331,6 +1331,12 @@
       <workItem from="1456133342919" duration="8727000" />
       <workItem from="1456142150064" duration="1404000" />
     </task>
+    <task id="LOCAL-00062" summary="try register">
+      <created>1456056506371</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1456056506371</updated>
+    </task>
     <task id="LOCAL-00063" summary="try register">
       <created>1456056811170</created>
       <option name="number" value="00063" />
@@ -1619,13 +1625,7 @@
       <option name="project" value="LOCAL" />
       <updated>1456153650839</updated>
     </task>
-    <task id="LOCAL-00111" summary="try login + sql">
-      <created>1456153859498</created>
-      <option name="number" value="00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1456153859498</updated>
-    </task>
-    <option name="localTasksCounter" value="112" />
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1728,7 +1728,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1389#1416#0" expanded="true" />
-            <element signature="e#5589#5616#0" expanded="true" />
+            <element signature="e#5694#5721#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1748,7 +1748,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1389#1416#0" expanded="true" />
-            <element signature="e#5589#5616#0" expanded="true" />
+            <element signature="e#5694#5721#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2058,28 +2058,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Services/NewService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="128" column="64" selection-start-line="128" selection-start-column="64" selection-end-line="128" selection-end-column="64" />
+          <caret line="152" column="11" selection-start-line="152" selection-start-column="11" selection-end-line="152" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1389#1416#0" expanded="true" />
+            <element signature="e#5694#5721#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5160142">
+          <caret line="114" column="13" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
           <folding>
             <element signature="e#4542#4569#0" expanded="true" />
             <element signature="e#4626#4634#0" expanded="true" />
             <element signature="e#4691#4699#0" expanded="true" />
             <element signature="e#4756#4764#0" expanded="true" />
             <element signature="e#4822#4830#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Services/NewService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57651246">
-          <caret line="149" column="25" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1389#1416#0" expanded="true" />
-            <element signature="e#5589#5616#0" expanded="true" />
           </folding>
         </state>
       </provider>
