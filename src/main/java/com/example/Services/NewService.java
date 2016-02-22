@@ -1,5 +1,6 @@
 package com.example.Services;
 
+import com.example.Config.HistoryRegistrations;
 import com.example.Config.Language;
 import com.example.Config.MySQLConfig;
 import org.springframework.web.bind.annotation.RestController;
@@ -157,9 +158,9 @@ public class NewService {
     }
 
     @RequestMapping(value = "/api/history", method = RequestMethod.GET)
-    public Map<String,ArrayList<String>> getHistoryTable()
+    public ArrayList<HistoryRegistrations> getHistoryTable()
     {
-        Map<String,ArrayList<String>> historyTable = new HashMap<String, ArrayList<String>>();
+        ArrayList<HistoryRegistrations> historyTable = new ArrayList<HistoryRegistrations>();
         MySQLConfig mySQLConfig = new MySQLConfig();
         mySQLConfig.connect();
 
