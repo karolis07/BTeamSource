@@ -5,7 +5,7 @@
     <title>History</title>
 </head>
 <body class="container">
-    <h1>Esamos registracijos </h1>
+    <h1>Esamos registracijos</h1>
 
 <div ng-controller="historyController" ng-init="fetch()">
     <pre>http status code: {{status}}</pre>
@@ -15,27 +15,28 @@
     <div class="row">
         <div class="col-xs-12">
             <table>
-                <tr ng-repeat="datos in data.Date">
+                <tr>
+                    <th>Data</th>
+                    <th>Laikas</th>
+                    <th>Banko skyrius</th>
+                    <th>Tema</th>
+                </tr>
+
+                <tr ng-repeat="form in data">
                     <td data-title="'Data'">
-                        {{datos}}
+                        {{form.registrationDate}}
                     </td>
-                </tr>
 
-                <tr ng-repeat="laikai in data.Time">
                     <td data-title="'Laikas'">
-                        {{laikai}}
+                        {{form.registrationTime}}
                     </td>
-                </tr>
 
-                <tr ng-repeat="skyriai in data.Bank">
                     <td data-title="'Banko skyrius'">
-                        {{skyriai}}
+                        {{form.bankDepartment}}
                     </td>
-                </tr>
 
-                <tr ng-repeat="temos in data.Theme">
                     <td data-title="'Tema'">
-                        {{temos}}
+                        {{form.dropDownList}}
                     </td>
                 </tr>
             </table>
