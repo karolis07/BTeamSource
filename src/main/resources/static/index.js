@@ -497,16 +497,16 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             $scope.delete = function() {
                 $http.delete('/del/' + $scope.data.userID + '/' + $scope.checkbox);
                 $location.url('/history');
-            }
+            };
 
             $scope.fetch = function() {
             $scope.code = null;
             $scope.response = null;
             $scope.bla2 = $rootScope;
 
-                            $scope.a2 = function(){
-                                $scope.data = $rootScope.dataHistory;
-                            };
+            $scope.a2 = function(){
+               $scope.data = $rootScope.dataHistory;
+            };
 
             $http({method: 'GET', url: '/api/history/getall', cache: $templateCache}).
               then(function(response) {
