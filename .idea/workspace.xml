@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="539356fd-58ad-4620-b9b1-365d30102ae1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/loginCtrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/loginService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/index.js" afterPath="$PROJECT_DIR$/src/main/resources/static/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/pages/login.html" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/loginService.js" afterPath="$PROJECT_DIR$/src/main/resources/static/loginService.js" />
     </list>
     <ignored path="US1_BTeam.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,10 +42,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.3773584">
+            <state vertical-scroll-proportion="0.0">
               <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
               <folding />
             </state>
@@ -111,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loginService.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="loginService.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/loginService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.04851752">
+              <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -1426,12 +1422,6 @@
       <workItem from="1456133342919" duration="8727000" />
       <workItem from="1456142150064" duration="1404000" />
     </task>
-    <task id="LOCAL-00079" summary="try register">
-      <created>1456064671365</created>
-      <option name="number" value="00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1456064671365</updated>
-    </task>
     <task id="LOCAL-00080" summary="try register">
       <created>1456065176857</created>
       <option name="number" value="00080" />
@@ -1720,7 +1710,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456182387676</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="more complex login from yt tutorial">
+      <created>1456185266551</created>
+      <option name="number" value="00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1456185266551</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1769,7 +1765,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Working DB" />
     <MESSAGE value="Login (NOT working YET)" />
     <MESSAGE value="initial" />
     <MESSAGE value="try sql" />
@@ -1794,7 +1789,8 @@
     <MESSAGE value="simple hardcoded login with resolve in routing." />
     <MESSAGE value="simple login - trying to get data from api" />
     <MESSAGE value="simple login - trying to get data from api. fixed stupid mistake" />
-    <option name="LAST_COMMIT_MESSAGE" value="simple login - trying to get data from api. fixed stupid mistake" />
+    <MESSAGE value="more complex login from yt tutorial" />
+    <option name="LAST_COMMIT_MESSAGE" value="more complex login from yt tutorial" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2155,10 +2151,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/loginService.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -2171,10 +2167,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/loginService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3773584">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.04851752">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
           <folding />
         </state>
       </provider>
