@@ -4,6 +4,8 @@ DEL USER ID SAUGOJIMO IR PERDAVIMO NAUDOTI $ROOTSCOPE.USERID
 
 */
 
+document.cookie = "";
+
 var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
     demoApp.config(function($routeProvider){
@@ -396,7 +398,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             $scope.fetch = function() {
                 $scope.code = null;
                 $scope.response = null;
-                $scope.url = "pages/lt.html";
+                $scope.url = "/en";
                 $scope.bla = $rootScope;
 
                 $scope.a = function(){

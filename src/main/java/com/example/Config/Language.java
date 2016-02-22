@@ -78,6 +78,7 @@ public class Language {
         fieldsNames.put("surname","Pavardė");
         fieldsNames.put("phone","Telefonas");
         fieldsNames.put("email","El. paštas");
+        fieldsNames.put("select", "Pasirinkite");
 
         fieldsNames.put("theme","Tema");
         fieldsNames.put("themeList1","Taupymas ir investavimas;");
@@ -107,6 +108,7 @@ public class Language {
         // LOGIN
         fieldsNames.put("titleOne","IT Akademy Bank");
         fieldsNames.put("titleTwo","Financial consults");
+        fieldsNames.put("select", "Select");
 
         fieldsNames.put("loginTitle","LOG IN");
         fieldsNames.put("loginEmail","E. Mail");
