@@ -21,7 +21,7 @@
 <div class="container">
 
     <h1 class="thick-heading">
-        Parašykite mums
+        {{ data.contactTitle }}
     </h1>
 
     <!-- First Featurette -->
@@ -32,15 +32,19 @@
                 <form role="form">
                     <div class="col-lg-6">
 
-                            <select id="theme" ng-model="theme">
-                                <option value="" disabled="disabled" selected="selected">Pasirinkite temą</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
+                            <select id="theme" ng-model="theme" style="margin-bottom: 5%">
+                                <option value="" disabled="disabled" selected="selected">{{ data.theme }}</option>
+                                <option value="{{ data.themeList1 }}">{{ data.themeList1 }}</option>
+                                <option value="{{ data.themeList2 }}">{{ data.themeList2 }}</option>
+                                <option value="{{ data.themeList3 }}">{{ data.themeList3 }}</option>
+                                <option value="{{ data.themeList4 }}">{{ data.themeList4 }}</option>
+                                <option value="{{ data.themeList5 }}">{{ data.themeList5 }}</option>
+                                <option value="{{ data.themeList6 }}">{{ data.themeList6 }}</option>
                             </select>
 
 
-
-                            <label for="InputMessage">Žinutės tekstas</label>
+                            <br>
+                            <label for="InputMessage">{{ data.contactMessage }}</label>
                             <div class="input-group">
                                 <textarea ng-model="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
                                 <span class="input-group-addon"></span>
@@ -48,29 +52,29 @@
 
 
                             <input type="text" ng-model="first_name" id="first_name" class="form-control input-lg"
-                                   placeholder="Vardas" tabindex="1">
+                                   placeholder="{{ data.name }}" tabindex="1" style="margin-top: 5%">
 
 
 
 
                             <input type="text" ng-model="last_name" id="last_name" class="form-control input-lg"
-                                   placeholder="Pavardė" tabindex="2">
+                                   placeholder="{{ data.surname }}" tabindex="2" style="margin-top: 5%">
 
                             <input type="text" ng-model="phone_number" id="phone_number" class="form-control input-lg"
-                                   placeholder="Telefonas susisiekti" tabindex="3">
+                                   placeholder="{{ data.phone }}" tabindex="3" style="margin-top: 5%">
 
 
                             <input type="email" ng-model="email" id="email" class="form-control input-lg"
-                                   placeholder="El. Paštas" tabindex="4">
+                                   placeholder="{{ data.email }}" tabindex="4" style="margin-top: 5%">
 
 
-                            <label for="InputMessage">Kaip pageidaujate gauti atsakymą?</label>
-                            <input type="radio" ng-model="answer" value="phone" checked> Telefonu<br>
-                            <input type="radio" ng-model="answer" value="email"> El. Paštu<br>
-                            <input type="radio" ng-model="answer" value="both"> El. Paštu ir telefonu
+                            <label for="InputMessage" style="margin-top: 5%">{{ data.contactAnswer }} </label><br>
+                            <input type="radio" ng-model="answer" value="phone" checked> {{ data.contactAnswerList1 }}<br>
+                            <input type="radio" ng-model="answer" value="email"> {{ data.contactAnswerList2 }}<br>
+                            <input type="radio" ng-model="answer" value="both"> {{ data.contactAnswerList3 }}<br>
 
 
-                        <button type="button" ng-click="submit()" class="btn btn-info pull-right"> Patvirtinti </button>
+                        <button type="button" ng-click="submit()" class="btn btn-info pull-right"> {{ data.buttonSend }}</button>
                     </div>
                 </form>
 
