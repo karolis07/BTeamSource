@@ -160,14 +160,14 @@ public class NewService {
         return true;
     }
 
-    @RequestMapping(value = "/api/history/{userID}", method = RequestMethod.GET)
-    public Map<String,ArrayList<String>> getHistoryTable(@PathVariable String userID)
+    @RequestMapping(value = "/api/history", method = RequestMethod.GET)
+    public Map<String,ArrayList<String>> getHistoryTable()
     {
         Map<String,ArrayList<String>> historyTable = new HashMap<String, ArrayList<String>>();
         MySQLConfig mySQLConfig = new MySQLConfig();
         mySQLConfig.connect();
 
-        historyTable = mySQLConfig.getHistoryTable(Integer.parseInt(userID));
+        historyTable = mySQLConfig.getHistoryTable(1);
         mySQLConfig.closeConnection();
 
         return historyTable;
