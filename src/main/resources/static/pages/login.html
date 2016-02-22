@@ -24,10 +24,10 @@
 
 <div class="loginMain">
     <div class="login">
-        <form method="" action="" ng-submit="login()" role="form">
-            <input name="email" id="email" type="email" ng-model="username" placeholder="{{ data.loginEmail }}" style="width: 100%; color: black"><br>
+        <form method="" action="" role="form">
+            <input name="email" id="email" type="email" ng-model="email" placeholder="{{ data.loginEmail }}" style="width: 100%; color: black"><br>
             <input name="password" id="password" type="password" ng-model="password" placeholder="{{ data.loginPassword }}" style="width: 100%; margin-top: 3%; color: black"><br>
-            <button class="buttonLogin" style="vertical-align:middle; margin-top: 3%; float: right;"><span>{{ data.loginButtonLogin }}</span></button>
+            <button class="buttonLogin" ng-click="submit()" style="vertical-align:middle; margin-top: 3%; float: right;"><span>{{ data.loginButtonLogin }}</span></button>
             <div style="margin-top: 33px">
                 <input type="checkbox" class="checkboxStyle">{{ data.loginCookie }}
             </div>
