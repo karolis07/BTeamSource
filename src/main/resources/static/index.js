@@ -27,7 +27,6 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             })
             .when('/history',
             {
-                 controller: 'historyController',
                  templateUrl: 'pages/history.html'
             })
             .when('/home',
