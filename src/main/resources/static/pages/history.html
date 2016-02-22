@@ -23,7 +23,7 @@
 
 
     <div class="row">
-        <div class="col-xs-12" ng-controller="historyController">
+        <div class="col-xs-12">
             <table class="table table-hover">
                 <thead>
                 <tr>
@@ -46,7 +46,7 @@
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Data'">
-                        <pre>{{data[0].registrationDate}}</pre>
+                        {{data[0].registrationDate}}
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Laikas'">
