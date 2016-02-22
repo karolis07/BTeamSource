@@ -107,14 +107,32 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'Authentication'
 
                                service.Login = function (username, password, callback) {
 
+                               /* Dummy authentication for testing, uses $timeout to simulate api call
+
+                                            ----------------------------------------------*/
+
+                                           $timeout(function(){
+
+                                               var response = { success: username === 'admin@admin.lt' && password === 'admin' };
+
+                                               if(!response.success) {
+
+                                                   response.message = 'Username or password is incorrect';
+
+                                               }
+
+                                               callback(response);
+
+                                           }, 1000);
+
                              /* Use this for real authentication
 
                                     ----------------------------------------------*/
 
-                                   $http.get('/api/authenticate/' + $scope.username + '/' + $scope.password)
-                                       .success(function (response) {
-                                           callback(response);
-                                      });
+//                                   $http.get('/api/authenticate/' + $scope.username + '/' + $scope.password)
+//                                       .success(function (response) {
+//                                           callback(response);
+//                                      });
                                };
                                service.SetCredentials = function (username, password) {
                                    var authdata = Base64.encode(username + ':' + password);
