@@ -32,7 +32,15 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             })
             .when('/home',
             {
+                resolve: {
+                    "check": function($location, $rootScope) {
+                        if(!$rootScope.loggedIn){
+                            $location.path('/');
+                        }
+                    }
+                },
                 templateUrl: 'pages/home.html'
+
             })
             .when('/test',
             {
@@ -55,12 +63,14 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             $scope.cookies = document.cookie;
         }]);
 
-        demoApp.controller('loginController', ['$scope', '$location', function($scope, $location){
+        demoApp.controller('loginController', ['$scope', '$location', '$rootScope', function($scope, $location, $rootScope){
             $scope.submit = function() {
-                var email = $scope.email;
-                var password = $scope.password;
+
                 if($scope.email == 'admin@admin.lt' && $scope.password == 'admin'){
+                    $rootScope.loggedIn = true;
                     $location.path('/home');
+                } else {
+                    alert('Incorrect credentials');
                 }
             }
 
