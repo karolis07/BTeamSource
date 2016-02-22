@@ -19,6 +19,8 @@ import java.util.Map;
 public class NewService {
     Language language = new Language();
 
+
+    //Get Lithuanian texts
     @RequestMapping("/lt")
     public Map<String,String> getLanguageLT() {
 
@@ -28,6 +30,7 @@ public class NewService {
         return language.fieldsNames;
     }
 
+    //Get English texts
     @RequestMapping("/en")
     public Map<String,String> getLanguageEN() {
 
@@ -37,29 +40,7 @@ public class NewService {
         return language.fieldsNames;
     }
 
-    @RequestMapping("/sql")
-    public Map<String, ArrayList<String>> getAllRegistrations() {
-        MySQLConfig mySQLConfig = new MySQLConfig();
-        mySQLConfig.connect();
-
-        ArrayList<String> result; // = new ArrayList<String>();
-        result = mySQLConfig.selectTest("");
-
-        ArrayList<String> databaseValues;
-        Map<String, ArrayList<String>> dataFromDatabase = new HashMap<String, ArrayList<String>>();
-        for (String s : result) {
-            String[] split = s.split(";");
-            databaseValues = new ArrayList<String>();
-            databaseValues.add(split[1]);
-            databaseValues.add(split[2]);
-
-            dataFromDatabase.put(split[0], databaseValues);
-        }
-
-        mySQLConfig.closeConnection();
-        return dataFromDatabase;
-    }
-
+    // SQL testing
     @RequestMapping(value = "/insert", method = RequestMethod.GET)
     public void doSmth(String id, String name, String surname) {
         MySQLConfig mySQLConfig = new MySQLConfig();
@@ -67,6 +48,8 @@ public class NewService {
         mySQLConfig.insertTest(Integer.parseInt(id),name,surname);
         mySQLConfig.closeConnection();
     }
+
+    // SQL testing
     @RequestMapping(value = "/US1/{id}/{name}/{surname}", method = RequestMethod.PUT)
     public void putInTest(@PathVariable String id, @PathVariable String name, @PathVariable String surname) {
         MySQLConfig mySQLConfig = new MySQLConfig();
@@ -75,8 +58,7 @@ public class NewService {
         mySQLConfig.closeConnection();
     }
 
-
-
+    // PUT DATA IN REGISTRATIONS TABLE
     @RequestMapping(value = "/US2/{name}/{surname}/{tel}/{email}/{bank}/{date}/{time}/{subject}/{message}", method = RequestMethod.PUT)
     public void putInRegistrations(
             @PathVariable String name, @PathVariable String surname, @PathVariable String tel,
@@ -104,6 +86,7 @@ public class NewService {
         mySQLConfig.closeConnection();
     }
 
+    // PUT DATA IN CONTACTS TABLE
     @RequestMapping(value = "/US3/{theme}/{InputMessage}/{first_name}/{last_name}/{phone_number}/{email}/{answer}", method = RequestMethod.PUT)
     public void putInContacts(
             @PathVariable String theme, @PathVariable String InputMessage, @PathVariable String first_name,
@@ -115,6 +98,8 @@ public class NewService {
         mySQLConfig.insertContacts(1,theme,InputMessage,first_name,last_name,phone_number,email,answer);
         mySQLConfig.closeConnection();
     }
+
+    // CHECK LOGIN
 
 //    @RequestMapping(value = "/api/authenticate/{email}/{password}/", method = RequestMethod.GET)
 //    public String getUser(
@@ -157,7 +142,8 @@ public class NewService {
         return userID;
     }
 
-    @RequestMapping(value = "/api/history/gettable/", method = RequestMethod.GET)
+    // GET HISTORY TABLE FOR SPECIFIC USER
+    @RequestMapping(value = "/api/history/getall", method = RequestMethod.GET)
     public ArrayList<HistoryRegistrations> getHistoryTable()
     {
         ArrayList<HistoryRegistrations> historyTable = new ArrayList<HistoryRegistrations>();
@@ -168,6 +154,31 @@ public class NewService {
         mySQLConfig.closeConnection();
 
         return historyTable;
+    }
+
+    // GET SPECIFIC REGISTRATION
+    @RequestMapping(value = "/api/history/view/{UserID}/{RegistrationID}", method = RequestMethod.GET)
+    public ArrayList<HistoryRegistrations> getHistoryTableElement(@PathVariable String UserID,@PathVariable String RegistrationID)
+    {
+        ArrayList<HistoryRegistrations> historyTable = new ArrayList<HistoryRegistrations>();
+        MySQLConfig mySQLConfig = new MySQLConfig();
+        mySQLConfig.connect();
+
+        historyTable = mySQLConfig.getHistoryTableElement(Integer.parseInt(UserID),Integer.parseInt(RegistrationID));
+        mySQLConfig.closeConnection();
+
+        return historyTable;
+    }
+
+    // DELETE SPECIFIC REGISTRATION
+    @RequestMapping(value = "/api/history/delete/{UserID}/{RegistrationID}", method = RequestMethod.PUT)
+    public void deleteHistoryTableElement(@PathVariable String UserID,@PathVariable String RegistrationID)
+    {
+        MySQLConfig mySQLConfig = new MySQLConfig();
+        mySQLConfig.connect();
+
+        mySQLConfig.deleteRegistration(Integer.parseInt(UserID),Integer.parseInt(RegistrationID));
+        mySQLConfig.closeConnection();
     }
 
 }
