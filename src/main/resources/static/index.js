@@ -81,6 +81,7 @@ DEL USER ID SAUGOJIMO IR PERDAVIMO NAUDOTI $ROOTSCOPE.USERID
                .controller('LoginController', LoginController)
                .controller('contactController', contactController)
                .controller('registerController', registerController)
+               .controller('homeController', homeController)
                .config(config)
                .directive('datepicker', function() {
                                    return {
