@@ -45,8 +45,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56623375">
-              <caret line="148" column="58" selection-start-line="148" selection-start-column="58" selection-end-line="148" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.8">
+              <caret line="327" column="56" selection-start-line="327" selection-start-column="56" selection-end-line="327" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -1398,12 +1398,6 @@
       <workItem from="1456133342919" duration="8727000" />
       <workItem from="1456142150064" duration="1404000" />
     </task>
-    <task id="LOCAL-00058" summary="try register">
-      <created>1456054486839</created>
-      <option name="number" value="00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1456054486839</updated>
-    </task>
     <task id="LOCAL-00059" summary="try register">
       <created>1456055067454</created>
       <option name="number" value="00059" />
@@ -1692,7 +1686,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456148676112</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="login works? one more">
+      <created>1456149237121</created>
+      <option name="number" value="00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1456149237121</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1763,7 +1763,8 @@
     <MESSAGE value="home page" />
     <MESSAGE value="login works?" />
     <MESSAGE value="login works? one more try" />
-    <option name="LAST_COMMIT_MESSAGE" value="login works? one more try" />
+    <MESSAGE value="login works? one more" />
+    <option name="LAST_COMMIT_MESSAGE" value="login works? one more" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2114,8 +2115,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56623375">
-          <caret line="148" column="58" selection-start-line="148" selection-start-column="58" selection-end-line="148" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.8">
+          <caret line="327" column="56" selection-start-line="327" selection-start-column="56" selection-end-line="327" selection-end-column="56" />
           <folding />
         </state>
       </provider>

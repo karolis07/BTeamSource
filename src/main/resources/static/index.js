@@ -325,7 +325,7 @@ DEL USER ID SAUGOJIMO IR PERDAVIMO NAUDOTI $ROOTSCOPE.USERID
                                $location.path('/home');
                            } else {
 //                               FlashService.Error(response.message);
-                               vm.dataLoading = false;
+                               $location.path('/register');
                            }
                        });
                    };
