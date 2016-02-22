@@ -495,6 +495,11 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
         demoApp.controller('historyController',['$scope', '$http', '$templateCache',function($scope, $http, $templateCache) {
 
+            $scope.delete = function() {
+                $http.delete('/del/' + $scope.data.userID + '/' + $scope.checkbox);
+                $location.url('/history');
+            }
+
             $scope.fetch = function() {
             $scope.code = null;
             $scope.response = null;
