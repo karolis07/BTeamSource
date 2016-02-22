@@ -45,8 +45,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56334233">
-              <caret line="73" column="16" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.3207547">
+              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1381,12 +1381,6 @@
       <workItem from="1456133342919" duration="8727000" />
       <workItem from="1456142150064" duration="1404000" />
     </task>
-    <task id="LOCAL-00074" summary="try register">
-      <created>1456060180557</created>
-      <option name="number" value="00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1456060180557</updated>
-    </task>
     <task id="LOCAL-00075" summary="try register">
       <created>1456060378203</created>
       <option name="number" value="00075" />
@@ -1675,7 +1669,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456179396312</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="simple login - trying to get data from api">
+      <created>1456181080259</created>
+      <option name="number" value="00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1456181080260</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1724,7 +1724,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="testing new DB" />
     <MESSAGE value="rollback from DB testing" />
     <MESSAGE value="Working DB" />
     <MESSAGE value="Login (NOT working YET)" />
@@ -1749,7 +1748,8 @@
     <MESSAGE value="testing login with hardcoded credentials" />
     <MESSAGE value="simple hardcoded login" />
     <MESSAGE value="simple hardcoded login with resolve in routing." />
-    <option name="LAST_COMMIT_MESSAGE" value="simple hardcoded login with resolve in routing." />
+    <MESSAGE value="simple login - trying to get data from api" />
+    <option name="LAST_COMMIT_MESSAGE" value="simple login - trying to get data from api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2135,8 +2135,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56334233">
-          <caret line="73" column="16" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.3207547">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding />
         </state>
       </provider>
