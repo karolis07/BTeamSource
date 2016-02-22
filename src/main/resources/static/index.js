@@ -81,6 +81,7 @@ DEL USER ID SAUGOJIMO IR PERDAVIMO NAUDOTI $ROOTSCOPE.USERID
                .controller('LoginController', LoginController)
                .controller('contactController', contactController)
                .controller('registerController', registerController)
+               .controller('historyController', historyController)
                .config(config)
                .directive('datepicker', function() {
                                    return {
@@ -464,6 +465,24 @@ DEL USER ID SAUGOJIMO IR PERDAVIMO NAUDOTI $ROOTSCOPE.USERID
 //                })
 //           });
 //        });
+
+        historyController.$inject = ['$scope', '$http', '$templateCache'];
+        function historyController($scope, $http, $templateCache) {
+
+            $scope.fetch = function() {
+            $scope.code = null;
+            $scope.response = null;
+
+            $http({method: 'GET', url: '/en', cache: $templateCache}).
+              then(function(response) {
+                $scope.status = response.status;
+                $scope.data = response.data;
+              }, function(response) {
+                $scope.data = response.data || "Request failed";
+                $scope.status = response.status;
+            });
+          };
+        };
 
 
 
