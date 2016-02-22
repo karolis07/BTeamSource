@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="539356fd-58ad-4620-b9b1-365d30102ae1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java" />
     </list>
     <ignored path="US1_BTeam.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1341,12 +1340,6 @@
       <workItem from="1456133342919" duration="8727000" />
       <workItem from="1456142150064" duration="1404000" />
     </task>
-    <task id="LOCAL-00065" summary="try register">
-      <created>1456057745709</created>
-      <option name="number" value="00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1456057745709</updated>
-    </task>
     <task id="LOCAL-00066" summary="try register">
       <created>1456057824848</created>
       <option name="number" value="00066" />
@@ -1635,7 +1628,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456155465251</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="try login + sql">
+      <created>1456156069431</created>
+      <option name="number" value="00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1456156069431</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
