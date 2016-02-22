@@ -4,7 +4,8 @@ package com.example.Config;
  * Created by Karolis on 2016.02.22.
  */
 public class HistoryRegistrations {
-    private String RegistrationID;
+    String RegistrationID;
+    String UserID;
     String Name;
     String Surname;
     String PhoneNo;
@@ -15,8 +16,9 @@ public class HistoryRegistrations {
     String DropDownList;
     String Message;
 
-    public HistoryRegistrations(String registrationID, String name, String surname, String phoneNo, String email, String bankDepartment, String registrationDate, String registrationTime, String dropDownList, String message) {
+    public HistoryRegistrations(String registrationID, String UserID, String name, String surname, String phoneNo, String email, String bankDepartment, String registrationDate, String registrationTime, String dropDownList, String message) {
         this.RegistrationID = registrationID;
+        this.UserID = UserID;
         this.Name = name;
         this.Surname = surname;
         this.PhoneNo = phoneNo;
@@ -30,6 +32,14 @@ public class HistoryRegistrations {
 
     public String getRegistrationID() {
         return RegistrationID;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public String getUserID() {
+        return UserID;
     }
 
     public String getSurname() {

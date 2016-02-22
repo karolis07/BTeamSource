@@ -30,7 +30,6 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             })
             .when('/home',
             {
-                controller: 'homeController',
                 templateUrl: 'pages/home.html'
             })
             .when('/test',
@@ -392,27 +391,50 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 //       })();
 // LOGIN STUFF ENDS HERE
 
+        demoApp.controller('languages',['$scope', '$http', '$rootScope', '$templateCache',function($scope, $http, $rootScope, $templateCache) {
 
+            $scope.fetch = function() {
+                $scope.code = null;
+                $scope.response = null;
+                $scope.url = "pages/lt.html";
+                $scope.bla = $rootScope;
 
-        demoApp.controller('loginController', ['$scope', '$http', '$window', '$rootScope',
-            function($scope, $http, $window, $rootScope){
+                $scope.a = function(){
+                    $scope.data = $rootScope.data;
+                };
+
+                $http({method: 'GET', url: $scope.url, cache: $templateCache}).
+                then(function(response) {
+                    $scope.status = response.status;
+                    $scope.data = response.data;
+                    $rootScope.data = $scope.data;
+                }, function(response) {
+                    $scope.data = response.data || "Request failed";
+                    $scope.status = response.status;
+                    $rootScope.data = $scope.data;
+                });
+            };
+        }]);
+
+        demoApp.controller('loginController', ['$scope', '$http', '$window',
+            function($scope, $http, $window){
                 $scope.login = function() {
                        var email = $( "#email" ).val();
                        var password = $( "#password" ).val();
                        $http({
                            method: 'POST',
-                           url: $rootScope.url+'/api/authenticate',
+                           url:'/api/authenticate',
                            data: { "email": email, "pass": password }
                        }).then(function successCallback(response) {
                                      if(response.data !== "")
                                      {
                                         $rootScope.user = response.data;
-                                        $window.location.href = '/#/home';
-                                     }else
-                                     {
-                                        $("#wrongPassword").show();
-                                        setTimeout(function(){ $("#wrongPassword").hide(); }, 3000);
-                                     }
+                                        $window.location.href = '#/home';
+                                     }//else
+//                                     {
+//                                        $("#wrongPassword").show();
+//                                        setTimeout(function(){ $("#wrongPassword").hide(); }, 3000);
+//                                     }
                                    }, function errorCallback(response) {
                                         alert("Problemos su interneto ryšiu");
                                    });

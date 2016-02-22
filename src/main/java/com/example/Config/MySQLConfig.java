@@ -132,6 +132,7 @@ public class MySQLConfig {
             while(resultSet.next())
             {
                 String regid = resultSet.getString("RegistrationID");
+                String uid = resultSet.getString("UserID");
                 String name = resultSet.getString("Name");
                 String surname = resultSet.getString("Surname");
                 String phone = resultSet.getString("PhoneNo");
@@ -141,7 +142,7 @@ public class MySQLConfig {
                 String regtime = resultSet.getString("RegistrationTime");
                 String dropdown = resultSet.getString("DropDownList");
                 String message = resultSet.getString("Message");
-                hr = new HistoryRegistrations(regid,name,surname,phone,email,bank,regdate,regtime,dropdown,message);
+                hr = new HistoryRegistrations(regid,uid,name,surname,phone,email,bank,regdate,regtime,dropdown,message);
                 historyTable.add(hr);
             }
         } catch (Exception e) {
