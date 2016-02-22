@@ -5,11 +5,34 @@
     <title>History</title>
 </head>
 <body class="container">
-    <h1>Esamos registracijos </h1>
+    <h1>Esamos registracijos</h1>
 
 <div ng-controller="historyController" ng-init="fetch()">
     <pre>http status code: {{status}}</pre>
     <pre>http response data: {{data}}</pre>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <table ng-table="demo.tableParams" class="table table-condensed table-bordered table-striped">
+                <tr ng-repeat="Date in $data">
+                    <td data-title="'Data'">
+                        {{Date}}
+                    </td>
+
+                    <td data-title="'Laikas'">
+                        <a ng-href="https://www.google.co.uk/search?q={{row.name}}" target="_blank"><em>{{row.name}}</em></a>
+                    </td>
+                    <td data-title="'Banko skyrius'">
+                        <em class="text-danger">{{ row.age | number:1}}</em>
+                    </td>
+                    <td data-title="'Tema'">
+                        {{row.money | currency:'$'}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
 
 </body>

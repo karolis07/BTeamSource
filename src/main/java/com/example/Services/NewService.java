@@ -138,8 +138,8 @@ public class NewService {
 //        return uid;
 //    }
 
-    @RequestMapping(value = "/api/authenticate", method = RequestMethod.POST)
-    public Boolean doSmth(String email, String password)
+    @RequestMapping(value = "/api/authenticate", method = RequestMethod.GET)
+    public int doSmth(String email, String password)
     {
         int userID;
         String uid = "";
@@ -149,15 +149,28 @@ public class NewService {
         userID = mySQLConfig.getLogin(email,password);
         mySQLConfig.closeConnection();
 
-        if(userID == -1)
-        {
-            uid = "error";
-        }
-        else
-        {
-            uid = Integer.toString(userID);
-        }
-        return true;
+//        if(userID == -1)
+//        {
+//            uid = "error";
+//        }
+//        else
+//        {
+//            uid = Integer.toString(userID);
+//        }
+        return userID;
+    }
+
+    @RequestMapping(value = "/api/history", method = RequestMethod.GET)
+    public Map<String,ArrayList<String>> getHistoryTable()
+    {
+        Map<String,ArrayList<String>> historyTable = new HashMap<String, ArrayList<String>>();
+        MySQLConfig mySQLConfig = new MySQLConfig();
+        mySQLConfig.connect();
+
+        historyTable = mySQLConfig.getHistoryTable(1);
+        mySQLConfig.closeConnection();
+
+        return historyTable;
     }
 
 }
