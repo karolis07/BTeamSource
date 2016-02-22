@@ -124,11 +124,6 @@ public class MySQLConfig {
 
     public ArrayList<HistoryRegistrations> getHistoryTable(int userID)
     {
-//        Map<String,ArrayList<String>> historyTable = new HashMap<String, ArrayList<String>>();
-//        ArrayList<String> historyDate = new ArrayList<String>();
-//        ArrayList<String> historyTime = new ArrayList<String>();
-//        ArrayList<String> historyBank = new ArrayList<String>();
-//        ArrayList<String> historyTheme = new ArrayList<String>();
         ArrayList<HistoryRegistrations> historyTable = new ArrayList<HistoryRegistrations>();
         HistoryRegistrations hr;
         String query = String.format("Select * from REGISTRATIONS where REGISTRATIONS.UserID = \"%d\";",userID);
@@ -136,9 +131,17 @@ public class MySQLConfig {
             ResultSet resultSet = st.executeQuery(query);
             while(resultSet.next())
             {
-                hr = new HistoryRegistrations(resultSet.getString("RegistrationID"),resultSet.getString("Name"),resultSet.getString("Surname"),resultSet.getString("PhoneNo"),
-                        resultSet.getString("EMail"),resultSet.getString("BankDepartment"),resultSet.getString("RegistrationDate"),
-                        resultSet.getString("RegistrationTime"),resultSet.getString("DropDownList"),resultSet.getString("Message"));
+                String regid = resultSet.getString("RegistrationID");
+                String name = resultSet.getString("Name");
+                String surname = resultSet.getString("Surname");
+                String phone = resultSet.getString("PhoneNo");
+                String email = resultSet.getString("EMail");
+                String bank = resultSet.getString("BankDepartment");
+                String regdate = resultSet.getString("RegistrationDate");
+                String regtime = resultSet.getString("RegistrationTime");
+                String dropdown = resultSet.getString("DropDownList");
+                String message = resultSet.getString("Message");
+                hr = new HistoryRegistrations(regid,name,surname,phone,email,bank,regdate,regtime,dropdown,message);
                 historyTable.add(hr);
             }
         } catch (Exception e) {
