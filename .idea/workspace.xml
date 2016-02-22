@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="539356fd-58ad-4620-b9b1-365d30102ae1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Config/HistoryRegistrations.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Config/HistoryRegistrations.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/index.js" afterPath="$PROJECT_DIR$/src/main/resources/static/index.js" />
     </list>
     <ignored path="US1_BTeam.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,8 +47,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7088949">
-              <caret line="409" column="73" selection-start-line="409" selection-start-column="73" selection-end-line="409" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.713615">
+              <caret line="415" column="36" selection-start-line="415" selection-start-column="36" selection-end-line="415" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -1318,6 +1321,12 @@
       <workItem from="1456133342919" duration="8727000" />
       <workItem from="1456142150064" duration="1404000" />
     </task>
+    <task id="LOCAL-00067" summary="try register">
+      <created>1456058175479</created>
+      <option name="number" value="00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1456058175480</updated>
+    </task>
     <task id="LOCAL-00068" summary="try register">
       <created>1456058394197</created>
       <option name="number" value="00068" />
@@ -1606,13 +1615,7 @@
       <option name="project" value="LOCAL" />
       <updated>1456157117457</updated>
     </task>
-    <task id="LOCAL-00116" summary="added userid, changes in login">
-      <created>1456157854013</created>
-      <option name="number" value="00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1456157854013</updated>
-    </task>
-    <option name="localTasksCounter" value="117" />
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1630,7 +1633,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33432835" sideWeight="0.5042275" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40149254" sideWeight="0.49577248" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0014925373" sideWeight="0.49577248" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32283464" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1661,6 +1664,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Homepage is working" />
     <MESSAGE value="Mapping works" />
     <MESSAGE value="Routes work" />
     <MESSAGE value="Registration form" />
@@ -1685,8 +1689,7 @@
     <MESSAGE value="old controllers, login commented" />
     <MESSAGE value="new login test" />
     <MESSAGE value="new login test another try" />
-    <MESSAGE value="added userid, changes in login" />
-    <option name="LAST_COMMIT_MESSAGE" value="added userid, changes in login" />
+    <option name="LAST_COMMIT_MESSAGE" value="new login test another try" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2069,8 +2072,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7088949">
-          <caret line="409" column="73" selection-start-line="409" selection-start-column="73" selection-end-line="409" selection-end-column="73" />
+        <state vertical-scroll-proportion="0.713615">
+          <caret line="415" column="36" selection-start-line="415" selection-start-column="36" selection-end-line="415" selection-end-column="36" />
           <folding />
         </state>
       </provider>

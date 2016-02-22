@@ -17,8 +17,8 @@
 -->
 <div class="header">
     <div class="headerText">
-        <h2>IT Akademijos Bankas</h2>
-        Finansų konsultacijos
+        <h2>{{ data.titleOne }}</h2>
+        {{ data.titleTwo }}
     </div>
     <div class="language">
         <a href="#" class="text">LT</a>
@@ -33,20 +33,19 @@
 
 <div class="main">
     <div class="columnWriteUs" align="center">
-        <a href="#/contact"><div class="buttonWriteUs"><div class="buttonText">Write US</div></div></a>
+        <a href="#/contact"><div class="buttonWriteUs"><div class="buttonText">{{ data.homeButtonWrite }}</div></div></a>
     </div>
     <div class="columnRegister" align="center">
-        <a href="#/register"><div class="buttonRegister"><div class="buttonText">Registruotis Internetu</div></div></a>
+        <a href="#/register"><div class="buttonRegister"><div class="buttonText">{{ data.homeButtonRegister }}</div></div></a>
     </div>
     <div class="columnMyReg" align="center">
-        <a href="#/history"><div class="buttonMyReg"><div class="buttonText">Mano registracijos</div></div></a>
+        <a href="#/history"><div class="buttonMyReg"><div class="buttonText">{{ data.homeButtonHistory }}</div></div></a>
     </div>
 </div>
 
 <div class="footer">
     <div class="footerText">
-        Jei klausimas susijęs su Jūsų finansine informacija „IT Akademijos Bankas",
-        paskambinus telefonais 1234 ir 4321 informaciją suteiksime nustatę Jūsų kaip banko kliento tapatybę.
+        {{ data.homeFooterText }}
     </div>
 </div>
 

@@ -4,6 +4,8 @@ DEL USER ID SAUGOJIMO IR PERDAVIMO NAUDOTI $ROOTSCOPE.USERID
 
 */
 
+document.cookie = "";
+
 var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
     demoApp.config(function($routeProvider){
@@ -30,7 +32,6 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             })
             .when('/home',
             {
-                controller: 'homeController',
                 templateUrl: 'pages/home.html'
             })
             .when('/test',
@@ -392,7 +393,30 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 //       })();
 // LOGIN STUFF ENDS HERE
 
+        demoApp.controller('languages',['$scope', '$http', '$rootScope', '$templateCache',function($scope, $http, $rootScope, $templateCache) {
 
+            $scope.fetch = function() {
+                $scope.code = null;
+                $scope.response = null;
+                $scope.url = "/en";
+                $scope.bla = $rootScope;
+
+                $scope.a = function(){
+                    $scope.data = $rootScope.data;
+                };
+
+                $http({method: 'GET', url: $scope.url, cache: $templateCache}).
+                then(function(response) {
+                    $scope.status = response.status;
+                    $scope.data = response.data;
+                    $rootScope.data = $scope.data;
+                }, function(response) {
+                    $scope.data = response.data || "Request failed";
+                    $scope.status = response.status;
+                    $rootScope.data = $scope.data;
+                });
+            };
+        }]);
 
         demoApp.controller('loginController', ['$scope', '$http', '$window',
             function($scope, $http, $window){

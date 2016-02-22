@@ -8,8 +8,8 @@
 
 <div class="header">
     <div class="headerText">
-        <h2>IT Akademijos Bankas</h2>
-        Finansų konsultacijos
+        <h2>{{ data.titleOne }}</h2>
+        {{ data.titleTwo }}
     </div>
     <div class="language">
         <a href="#" class="text">LT</a>
@@ -25,11 +25,11 @@
 <div class="loginMain">
     <div class="login">
         <form method="" action="" ng-submit="login()" role="form">
-            <input name="email" id="email" type="email" ng-model="email" placeholder="El. paštas" style="width: 100%; color: black"><br>
-            <input name="password" id="password" type="password" ng-model="password" placeholder="Slaptažodis" style="width: 100%; margin-top: 3%; color: black"><br>
-            <button class="buttonLogin" style="vertical-align:middle; margin-top: 3%; float: right;"><span>Prisijungti</span></button>
+            <input name="email" id="email" type="email" ng-model="email" placeholder="{{ data.loginEmail }}" style="width: 100%; color: black"><br>
+            <input name="password" id="password" type="password" ng-model="password" placeholder="{{ data.loginPassword }}" style="width: 100%; margin-top: 3%; color: black"><br>
+            <button class="buttonLogin" style="vertical-align:middle; margin-top: 3%; float: right;"><span>{{ data.loginButtonLogin }}</span></button>
             <div style="margin-top: 33px">
-                <input type="checkbox" class="checkboxStyle">Likti prisijungus
+                <input type="checkbox" class="checkboxStyle">{{ data.loginCookie }}
             </div>
         </form>
     </div>
@@ -37,8 +37,7 @@
 
 <div class="footer">
     <div class="footerText">
-        Jei klausimas susijęs su Jūsų finansine informacija „IT Akademijos Bankas",
-        paskambinus telefonais 1234 ir 4321 informaciją suteiksime nustatę Jūsų kaip banko kliento tapatybę.
+        {{ data.homeFooterText }}
     </div>
 </div>
 
