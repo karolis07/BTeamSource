@@ -30,7 +30,6 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             })
             .when('/home',
             {
-                controller: 'homeController',
                 templateUrl: 'pages/home.html'
             })
             .when('/test',
