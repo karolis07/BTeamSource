@@ -146,17 +146,13 @@ public class NewService {
         MySQLConfig mySQLConfig = new MySQLConfig();
         mySQLConfig.connect();
 
+        email="admin@admin.lt";
+        password="admin";
+
         userID = mySQLConfig.getLogin(email,password);
         mySQLConfig.closeConnection();
 
-//        if(userID == -1)
-//        {
-//            uid = "error";
-//        }
-//        else
-//        {
-//            uid = Integer.toString(userID);
-//        }
+
         return userID;
     }
 
