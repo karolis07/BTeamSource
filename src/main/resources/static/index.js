@@ -394,8 +394,8 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
 
 
-        demoApp.controller('loginController', ['$scope', '$http', '$window', '$rootScope',
-            function($scope, $http, $window, $rootScope){
+        demoApp.controller('loginController', ['$scope', '$http', '$window',
+            function($scope, $http, $window){
                 $scope.login = function() {
                        var email = $( "#email" ).val();
                        var password = $( "#password" ).val();
@@ -407,12 +407,12 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                                      if(response.data !== "")
                                      {
                                         $rootScope.user = response.data;
-                                        $window.location.href = '/#/home';
-                                     }else
-                                     {
-                                        $("#wrongPassword").show();
-                                        setTimeout(function(){ $("#wrongPassword").hide(); }, 3000);
-                                     }
+                                        $window.location.href = '#/home';
+                                     }//else
+//                                     {
+//                                        $("#wrongPassword").show();
+//                                        setTimeout(function(){ $("#wrongPassword").hide(); }, 3000);
+//                                     }
                                    }, function errorCallback(response) {
                                         alert("Problemos su interneto ryšiu");
                                    });
