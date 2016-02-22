@@ -504,7 +504,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             $scope.code = null;
             $scope.response = null;
 
-            $http({method: 'GET', url: '/api/history', cache: $templateCache}).
+            $http({method: 'GET', url: '/api/history/gettable', cache: $templateCache}).
               then(function(response) {
                 $scope.status = response.status;
                 $scope.data = response.data;
