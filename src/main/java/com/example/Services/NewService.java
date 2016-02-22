@@ -157,7 +157,7 @@ public class NewService {
         return userID;
     }
 
-    @RequestMapping(value = "/api/history", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/history/gettable/", method = RequestMethod.GET)
     public ArrayList<HistoryRegistrations> getHistoryTable()
     {
         ArrayList<HistoryRegistrations> historyTable = new ArrayList<HistoryRegistrations>();
