@@ -401,7 +401,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                        var password = $( "#password" ).val();
                        $http({
                            method: 'POST',
-                           url: $rootScope.url+'/api/authenticate',
+                           url:'/api/authenticate',
                            data: { "email": email, "pass": password }
                        }).then(function successCallback(response) {
                                      if(response.data !== "")
