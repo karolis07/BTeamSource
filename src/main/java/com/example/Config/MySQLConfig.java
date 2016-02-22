@@ -3,6 +3,8 @@ package com.example.Config;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MySQLConfig {
     private String url = "jdbc:mysql://127.11.130.2:3306/";
@@ -105,7 +107,7 @@ public class MySQLConfig {
     public int getLogin(String email, String password)
     {
         int userID = -1;
-        String query = String.format("Select UserID from LOGINS where LOGINS.EMAIL = \"%s\" AND LOGINS.PASSWORD = \"%s\";",email,password);
+        String query = String.format("Select UserID from LOGINS where LOGINS.EMail = \"%s\" AND LOGINS.Password = \"%s\";",email,password);
         try {
             ResultSet resultSet = st.executeQuery(query);
             while(resultSet.next())
@@ -119,6 +121,34 @@ public class MySQLConfig {
         return userID;
     }
 
+    public Map<String,ArrayList<String>> getHistoryTable(int userID)
+    {
+        Map<String,ArrayList<String>> historyTable = new HashMap<String, ArrayList<String>>();
+        ArrayList<String> historyDate = new ArrayList<String>();
+        ArrayList<String> historyTime = new ArrayList<String>();
+        ArrayList<String> historyBank = new ArrayList<String>();
+        ArrayList<String> historyTheme = new ArrayList<String>();
+        String query = String.format("Select * from REGISTRATIONS where REGISTRATIONS.UserID = \"%d\";",userID);
+        try {
+            ResultSet resultSet = st.executeQuery(query);
+            while(resultSet.next())
+            {
+                historyDate.add(resultSet.getString("RegistrationDate"));
+                historyTime.add(resultSet.getString("RegistrationTime"));
+                historyBank.add(resultSet.getString("BankDepartment"));
+                historyTheme.add(resultSet.getString("DropDownList"));
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        historyTable.put("Date",historyDate);
+        historyTable.put("Time",historyTime);
+        historyTable.put("Bank",historyBank);
+        historyTable.put("Theme",historyTheme);
+
+        return historyTable;
+    }
 
 
 }
