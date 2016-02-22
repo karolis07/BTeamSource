@@ -394,26 +394,29 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
 
 
-        demoApp.controller('loginController', ['$scope', '$http', '$templateCache',
-            function($scope, $http, $templateCache){
-                $scope.method = 'GET';
-                $scope.url = '/peanuts';
-                $scope.code = null;
-                $scope.response = null;
-
-                $http({method: $scope.method, url: $scope.url, cache: $templateCache}).
-                then(function(response){
-                    $scope.status = response.status;
-                    $scope.data = response.data;
-                }, function(response){
-                    $scope.data = response.data || "Request failed";
-                    $scope.status = response.status;
-                });
-
-                $scope.updateModel = function(method, url) {
-                    $scope.method = method;
-                    $scope.url = url;
-                };
+        demoApp.controller('loginController', ['$scope', '$http', '$window', '$rootScope',
+            function($scope, $http, $window, $rootScope){
+                $scope.login = function() {
+                       var email = $( "#email" ).val();
+                       var password = $( "#password" ).val();
+                       $http({
+                           method: 'POST',
+                           url: $rootScope.url+'/authenticate',
+                           data: { "email": email, "pass": password }
+                       }).then(function successCallback(response) {
+                                     if(response.data != "")
+                                     {
+                                        $rootScope.user = response.data;
+                                        $window.location.href = '/#/home';
+                                     }else
+                                     {
+                                        $("#wrongPassword").show();
+                                        setTimeout(function(){ $("#wrongPassword").hide(); }, 3000);
+                                     }
+                                   }, function errorCallback(response) {
+                                        alert("Problemos su interneto ryšiu");
+                                   });
+                    }
             }]);
 
 
