@@ -31,4 +31,36 @@ public class HistoryRegistrations {
     public String getRegistrationID() {
         return RegistrationID;
     }
+
+    public String getSurname() {
+        return Surname;
+    }
+
+    public String getPhoneNo() {
+        return PhoneNo;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public String getBankDepartment() {
+        return BankDepartment;
+    }
+
+    public String getRegistrationDate() {
+        return RegistrationDate;
+    }
+
+    public String getRegistrationTime() {
+        return RegistrationTime;
+    }
+
+    public String getDropDownList() {
+        return DropDownList;
+    }
+
+    public String getMessage() {
+        return Message;
+    }
 }
