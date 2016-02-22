@@ -14,10 +14,9 @@
     <link rel="stylesheet" type="text/css" href="extra/style.css">
 
 </head>
-<body class="container">
+<body class="container" ng-controller="historyController" ng-init="fetch()">
     <h1>Esamos registracijos 3</h1>
 
-<div ng-controller="historyController" ng-init="fetch()">
     <pre>http status code: {{status}}</pre>
     <pre>http response data: {{data[0].registrationDate}}</pre>
 
@@ -38,8 +37,6 @@
 
                 <tbody>
 
-
-                <div ng-controller="historyController" ng-init="fetch()">
                 <tr>
 
                     <td onClick="" data-title="'Check">
@@ -64,7 +61,6 @@
 
                 </tr>
 
-                </div>
                 </tbody>
             </table>
 
@@ -72,7 +68,6 @@
             <button type="button" ng-click="delete()" class="btn btn-primary btn-block btn-lg">Pasalinti</button>
 
 
-        </div>
     </div>
 </div>
 

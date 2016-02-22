@@ -493,7 +493,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
            });
         });
 
-        demoApp.controller('historyController',['$scope', '$http', '$templateCache',function($scope, $http, $templateCache) {
+        demoApp.controller('historyController',['$scope', '$http', '$rootScope', '$templateCache',function($scope, $http, $rootScope, $templateCache) {
 
             $scope.delete = function() {
                 $http.delete('/del/' + $scope.data.userID + '/' + $scope.checkbox);
@@ -503,14 +503,21 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             $scope.fetch = function() {
             $scope.code = null;
             $scope.response = null;
+            $scope.bla2 = $rootScope;
+
+                            $scope.a2 = function(){
+                                $scope.data = $rootScope.dataHistory;
+                            };
 
             $http({method: 'GET', url: '/api/history/getall', cache: $templateCache}).
               then(function(response) {
                 $scope.status = response.status;
                 $scope.data = response.data;
+                $rootScope.dataHistory = $scope.data;
               }, function(response) {
                 $scope.data = response.data || "Request failed";
                 $scope.status = response.status;
+                $rootScope.dataHistory = $scope.data;
             });
           };
         }]);
