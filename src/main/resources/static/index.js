@@ -345,11 +345,16 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'Authentication'
 
         demoApp.controller('historyController',['$scope', '$http', '$templateCache',function($scope, $http, $templateCache) {
 
+            $scope.delete = function() {
+                $http.delete('/del/' + $scope.data.userID + '/' + $scope.checkbox);
+                $location.url('/history');
+            }
+
             $scope.fetch = function() {
             $scope.code = null;
             $scope.response = null;
 
-            $http({method: 'GET', url: '/api/history', cache: $templateCache}).
+            $http({method: 'GET', url: '/api/history/getall', cache: $templateCache}).
               then(function(response) {
                 $scope.status = response.status;
                 $scope.data = response.data;

@@ -64,9 +64,7 @@ public class MySQLConfig {
         String query = String.format("insert into Test(id, name, surname)" +
                         "values("+id+","+name.toString()+","+surname.toString()+");");
         try {
-            int value = st.executeUpdate(query);
-            if (value == 1)
-                System.out.println("Successfully inserted value");
+            st.executeUpdate(query);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -80,9 +78,7 @@ public class MySQLConfig {
                         "values(\"%d\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\");",
                 userID, name, surname, tel, email, bank, date.toString(), time.toString(), subject, message);
         try {
-            int value = st.executeUpdate(query);
-            if (value == 1)
-                System.out.println("Successfully inserted value");
+            st.executeUpdate(query);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -96,9 +92,7 @@ public class MySQLConfig {
                         "values(\"%d\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\", \"%s\");",
                 userID, theme, InputMessage, first_name, last_name, phone_number, email, answer);
         try {
-            int value = st.executeUpdate(query);
-            if (value == 1)
-                System.out.println("Successfully inserted value");
+            st.executeUpdate(query);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -132,7 +126,7 @@ public class MySQLConfig {
             while(resultSet.next())
             {
                 String regid = resultSet.getString("RegistrationID");
-                String uid = resultSet.getString("UserID");
+                String usrid = resultSet.getString("UserID");
                 String name = resultSet.getString("Name");
                 String surname = resultSet.getString("Surname");
                 String phone = resultSet.getString("PhoneNo");
@@ -142,7 +136,7 @@ public class MySQLConfig {
                 String regtime = resultSet.getString("RegistrationTime");
                 String dropdown = resultSet.getString("DropDownList");
                 String message = resultSet.getString("Message");
-                hr = new HistoryRegistrations(regid,uid,name,surname,phone,email,bank,regdate,regtime,dropdown,message);
+                hr = new HistoryRegistrations(regid,usrid,name,surname,phone,email,bank,regdate,regtime,dropdown,message);
                 historyTable.add(hr);
             }
         } catch (Exception e) {
@@ -152,6 +146,45 @@ public class MySQLConfig {
         return historyTable;
     }
 
+    public ArrayList<HistoryRegistrations> getHistoryTableElement(int userID, int registrationID)
+    {
+        ArrayList<HistoryRegistrations> historyTable = new ArrayList<HistoryRegistrations>();
+        HistoryRegistrations hr;
+        String query = String.format("Select * from REGISTRATIONS where REGISTRATIONS.UserID = \"%d\" AND REGISTRATIONS.RegistrationID = \"%d\";",userID,registrationID);
+        try {
+            ResultSet resultSet = st.executeQuery(query);
+            while(resultSet.next())
+            {
+                String regid = resultSet.getString("RegistrationID");
+                String usrid = resultSet.getString("UserID");
+                String name = resultSet.getString("Name");
+                String surname = resultSet.getString("Surname");
+                String phone = resultSet.getString("PhoneNo");
+                String email = resultSet.getString("EMail");
+                String bank = resultSet.getString("BankDepartment");
+                String regdate = resultSet.getString("RegistrationDate");
+                String regtime = resultSet.getString("RegistrationTime");
+                String dropdown = resultSet.getString("DropDownList");
+                String message = resultSet.getString("Message");
+                hr = new HistoryRegistrations(regid,usrid,name,surname,phone,email,bank,regdate,regtime,dropdown,message);
+                historyTable.add(hr);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return historyTable;
+    }
+
+    public void deleteRegistration(int userID, int registrationID)
+    {
+        String query = String.format("Delete from REGISTRATIONS where REGISTRATIONS.UserID = \"%d\" AND REGISTRATIONS.RegistrationID = \"%d\";",userID,registrationID);
+        try {
+            st.executeUpdate(query);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
 }
 
