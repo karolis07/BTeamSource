@@ -139,7 +139,7 @@ public class NewService {
 //    }
 
     @RequestMapping(value = "/api/authenticate", method = RequestMethod.POST)
-    public String doSmth(String email, String password)
+    public Boolean doSmth(String email, String password)
     {
         int userID;
         String uid = "";
@@ -157,7 +157,7 @@ public class NewService {
         {
             uid = Integer.toString(userID);
         }
-        return uid;
+        return true;
     }
 
 }
