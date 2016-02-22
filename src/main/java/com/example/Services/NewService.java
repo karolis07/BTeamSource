@@ -116,9 +116,31 @@ public class NewService {
         mySQLConfig.closeConnection();
     }
 
-    @RequestMapping(value = "/api/users/{email}/{password}/", method = RequestMethod.GET)
-    public String getUser(
-            @PathVariable String email, @PathVariable String password)
+//    @RequestMapping(value = "/api/authenticate/{email}/{password}/", method = RequestMethod.GET)
+//    public String getUser(
+//            @PathVariable String email, @PathVariable String password)
+//    {
+//        int userID;
+//        String uid = "";
+//        MySQLConfig mySQLConfig = new MySQLConfig();
+//        mySQLConfig.connect();
+//
+//        userID = mySQLConfig.getLogin(email,password);
+//        mySQLConfig.closeConnection();
+//
+//        if(userID == -1)
+//        {
+//            uid = "error";
+//        }
+//        else
+//        {
+//            uid = Integer.toString(userID);
+//        }
+//        return uid;
+//    }
+
+    @RequestMapping(value = "/api/authenticate", method = RequestMethod.POST)
+    public String doSmth(String email, String password)
     {
         int userID;
         String uid = "";
@@ -138,6 +160,5 @@ public class NewService {
         }
         return uid;
     }
-
 
 }
