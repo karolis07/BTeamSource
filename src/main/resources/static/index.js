@@ -146,7 +146,7 @@ DEL USER ID SAUGOJIMO IR PERDAVIMO NAUDOTI $ROOTSCOPE.USERID
 
                    /* Use this for real authentication
                     ----------------------------------------------*/
-                   $http.post('/api/authenticate', { username,password})
+                   $http.post('/api/authenticate', { username: username, password: password })
                        .success(function (response) {
                            callback(response);
                        });
