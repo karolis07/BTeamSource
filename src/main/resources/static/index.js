@@ -65,16 +65,16 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
         demoApp.controller('loginController', ['$scope', '$location', '$rootScope', '$http',
          function($scope, $location, $rootScope, $http){
-            $scope.submit =
+            $scope.submit = function() {
 
-                $http.get('/api/authenticate/' + $scope.email + '/' + $scope password)
+                $http.post('/api/authenticate/' + $scope.email + '/' + $scope password)
                 .success(function(response){
                     $rootScope.loggedIn = true;
                     $location.path('/home');
                 });
 
 
-
+            }
 
         }]);
 
