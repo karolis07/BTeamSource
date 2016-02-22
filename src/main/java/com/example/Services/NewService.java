@@ -2,7 +2,6 @@ package com.example.Services;
 
 import com.example.Config.Language;
 import com.example.Config.MySQLConfig;
-import com.sun.javafx.collections.MappingChange;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -140,7 +139,7 @@ public class NewService {
 //    }
 
     @RequestMapping(value = "/api/authenticate", method = RequestMethod.POST)
-    public String doSmth(String email, String password)
+    public Boolean doSmth(String email, String password)
     {
         int userID;
         String uid = "";
@@ -158,7 +157,7 @@ public class NewService {
         {
             uid = Integer.toString(userID);
         }
-        return uid;
+        return true;
     }
 
     @RequestMapping(value = "/api/history/{userID}", method = RequestMethod.GET)
