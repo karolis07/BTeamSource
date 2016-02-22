@@ -1,6 +1,8 @@
 package com.example.Services;
 
+import com.example.Config.Language;
 import com.example.Config.MySQLConfig;
+import com.sun.javafx.collections.MappingChange;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,18 +17,25 @@ import java.util.Map;
 
 @RestController
 public class NewService {
+    Language language = new Language();
 
-//DATE MAGIC
-   // java.util.Date utilDate = new java.util.Date();
-    // System.out.println("Util date in Java : " + utilDate);
-    // contains only date information without time
-    // java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-    // System.out.println("SQL date in Java : " + sqlDate);
+    @RequestMapping("/lt")
+    public Map<String,String> getLanguageLT() {
 
-//TIME MAGIC
-    //PreparedStatement pstmt = conn.prepareStatement(INSERT_RECORD);
-//    java.sql.Time sqlDate = new java.sql.Time(new java.util.Date().getTime());
-//    pstmt.setTime(2, sqlDate);
+        language.getLT();
+        //language.fieldsNames.get("name");
+
+        return language.fieldsNames;
+    }
+
+    @RequestMapping("/en")
+    public Map<String,String> getLanguageEN() {
+
+        language.getEN();
+        //language.fieldsNames.get("name");
+
+        return language.fieldsNames;
+    }
 
     @RequestMapping("/sql")
     public Map<String, ArrayList<String>> getAllRegistrations() {
@@ -66,9 +75,6 @@ public class NewService {
         mySQLConfig.closeConnection();
     }
 
-    //                $http.put('/US2/' + $scope.name + '/' + $scope.surname + '/' + $scope.tel + '/' +
-    // $scope.email + '/' + $scope.bank + '/' + $scope.datepicker.date + '/' + $scope.time + '/' +
-    // $scope.subject + '/' + $scope.message);
 
 
     @RequestMapping(value = "/US2/{name}/{surname}/{tel}/{email}/{bank}/{date}/{time}/{subject}/{message}", method = RequestMethod.PUT)
@@ -108,6 +114,29 @@ public class NewService {
         mySQLConfig.connect();
         mySQLConfig.insertContacts(1,theme,InputMessage,first_name,last_name,phone_number,email,answer);
         mySQLConfig.closeConnection();
+    }
+
+    @RequestMapping(value = "/api/users/{email}/{password}/", method = RequestMethod.GET)
+    public String getUser(
+            @PathVariable String email, @PathVariable String password)
+    {
+        int userID;
+        String uid = "";
+        MySQLConfig mySQLConfig = new MySQLConfig();
+        mySQLConfig.connect();
+
+        userID = mySQLConfig.getLogin(email,password);
+        mySQLConfig.closeConnection();
+
+        if(userID == -1)
+        {
+            uid = "error";
+        }
+        else
+        {
+            uid = Integer.toString(userID);
+        }
+        return uid;
     }
 
 

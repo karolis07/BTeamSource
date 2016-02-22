@@ -102,6 +102,23 @@ public class MySQLConfig {
         }
     }
 
+    public int getLogin(String email, String password)
+    {
+        int userID = -1;
+        String query = String.format("Select UserID from LOGINS where LOGINS.EMAIL = \"%s\" AND LOGINS.PASSWORD = \"%s\";",email,password);
+        try {
+            ResultSet resultSet = st.executeQuery(query);
+            while(resultSet.next())
+            {
+                userID = resultSet.getInt("UserID");
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        return userID;
+    }
+
 
 
 }
