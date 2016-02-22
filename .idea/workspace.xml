@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="539356fd-58ad-4620-b9b1-365d30102ae1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java" />
     </list>
     <ignored path="US1_BTeam.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,14 +55,14 @@
       <file leaf-file-name="MySQLConfig.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37247923">
-              <caret line="114" column="52" selection-start-line="114" selection-start-column="52" selection-end-line="114" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.43297747">
+              <caret line="114" column="72" selection-start-line="114" selection-start-column="72" selection-end-line="114" selection-end-column="72" />
               <folding>
-                <element signature="e#4510#4537#0" expanded="true" />
-                <element signature="e#4594#4602#0" expanded="true" />
-                <element signature="e#4659#4667#0" expanded="true" />
-                <element signature="e#4724#4732#0" expanded="true" />
-                <element signature="e#4790#4798#0" expanded="true" />
+                <element signature="e#4537#4564#0" expanded="true" />
+                <element signature="e#4621#4629#0" expanded="true" />
+                <element signature="e#4686#4694#0" expanded="true" />
+                <element signature="e#4751#4759#0" expanded="true" />
+                <element signature="e#4817#4825#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1333,12 +1334,6 @@
       <workItem from="1456133342919" duration="8727000" />
       <workItem from="1456142150064" duration="1404000" />
     </task>
-    <task id="LOCAL-00060" summary="try register">
-      <created>1456056039458</created>
-      <option name="number" value="00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1456056039458</updated>
-    </task>
     <task id="LOCAL-00061" summary="try register">
       <created>1456056300317</created>
       <option name="number" value="00061" />
@@ -1627,7 +1622,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456152837152</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="try login + sql">
+      <created>1456152851221</created>
+      <option name="number" value="00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1456152851221</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -2074,14 +2075,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Config/MySQLConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37247923">
-          <caret line="114" column="52" selection-start-line="114" selection-start-column="52" selection-end-line="114" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.43297747">
+          <caret line="114" column="72" selection-start-line="114" selection-start-column="72" selection-end-line="114" selection-end-column="72" />
           <folding>
-            <element signature="e#4510#4537#0" expanded="true" />
-            <element signature="e#4594#4602#0" expanded="true" />
-            <element signature="e#4659#4667#0" expanded="true" />
-            <element signature="e#4724#4732#0" expanded="true" />
-            <element signature="e#4790#4798#0" expanded="true" />
+            <element signature="e#4537#4564#0" expanded="true" />
+            <element signature="e#4621#4629#0" expanded="true" />
+            <element signature="e#4686#4694#0" expanded="true" />
+            <element signature="e#4751#4759#0" expanded="true" />
+            <element signature="e#4817#4825#0" expanded="true" />
           </folding>
         </state>
       </provider>
