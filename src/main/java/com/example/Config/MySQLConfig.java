@@ -107,8 +107,9 @@ public class MySQLConfig {
     public int getLogin(String email, String password)
     {
         int userID = -1;
-        String query = String.format("Select UserID from LOGINS where LOGINS.EMail = \"%s\" AND LOGINS.Password = \"%s\" ;",email,password);
+
         try {
+            String query = String.format("Select UserID from LOGINS where LOGINS.EMail = \"%s\" AND LOGINS.Password = \"%s\" ;",email,password);
             ResultSet resultSet = st.executeQuery(query);
             while(resultSet.next())
             {
