@@ -81,7 +81,6 @@ DEL USER ID SAUGOJIMO IR PERDAVIMO NAUDOTI $ROOTSCOPE.USERID
                .controller('LoginController', LoginController)
                .controller('contactController', contactController)
                .controller('registerController', registerController)
-               .controller('homeController', homeController)
                .config(config)
                .directive('datepicker', function() {
                                    return {
@@ -361,9 +360,7 @@ DEL USER ID SAUGOJIMO IR PERDAVIMO NAUDOTI $ROOTSCOPE.USERID
                                    })
                                    .when('/home',
                                    {
-                                       controller: 'homeController',
-                                       templateUrl: 'pages/home.html',
-                                       controllerAs: 'vm'
+                                       templateUrl: 'pages/home.html'
                                    })
                                    .when('/test',
                                    {
