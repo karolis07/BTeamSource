@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="539356fd-58ad-4620-b9b1-365d30102ae1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/pages/history.html" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/history.html" />
     </list>
     <ignored path="US1_BTeam.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,8 +55,8 @@
       <file leaf-file-name="history.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/pages/history.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4770017">
-              <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.057921637">
+              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -1326,12 +1327,6 @@
       <workItem from="1456133342919" duration="8727000" />
       <workItem from="1456142150064" duration="1404000" />
     </task>
-    <task id="LOCAL-00058" summary="try register">
-      <created>1456054486839</created>
-      <option name="number" value="00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1456054486839</updated>
-    </task>
     <task id="LOCAL-00059" summary="try register">
       <created>1456055067454</created>
       <option name="number" value="00059" />
@@ -1620,7 +1615,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456166608280</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="try login + sql">
+      <created>1456167224425</created>
+      <option name="number" value="00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1456167224425</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -2059,8 +2060,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/pages/history.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4770017">
-          <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.057921637">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
           <folding />
         </state>
       </provider>
