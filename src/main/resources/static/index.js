@@ -41,7 +41,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             .otherwise({ redirectTo: '/'});
         });
 
-        demoapp.controller('loginCrtl', function($scope, $location)
+        demoApp.controller('loginCrtl', function($scope, $location)
         {
             $scope.submit = function()
             {
@@ -466,7 +466,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
            });
         });
 
-        demoApp.controller('historyController',function historyController($scope, $http, $templateCache) {
+        demoApp.controller('historyController',['$scope', '$http', '$templateCache',function($scope, $http, $templateCache) {
 
             $scope.fetch = function() {
             $scope.code = null;
@@ -481,7 +481,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                 $scope.status = response.status;
             });
           };
-        });
+        }]);
 
 
 
