@@ -19,7 +19,7 @@
 
 <div ng-controller="historyController" ng-init="fetch()">
     <pre>http status code: {{status}}</pre>
-    <pre>http response data: {{data}}</pre>
+    <pre>http response data: {{data[0]}}</pre>
 
 
     <div class="row">
@@ -46,19 +46,19 @@
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Data'">
-                        {{data[0].registrationDate}}
+                        <p>{{data[0].registrationDate}}</p>
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Laikas'">
-                        {{data[0].registrationTime}}
+                        <p>{{data[0].registrationTime}}</p>
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Banko skyrius'">
-                        {{data[0].bankDepartment}}
+                        <p>{{data[0].bankDepartment}}</p>
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Tema'">
-                        {{data[0].dropDownList}}
+                        <p>{{data[0].dropDownList}}</p>
                     </td>
 
                 </tr>
