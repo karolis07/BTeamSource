@@ -63,15 +63,17 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             $scope.cookies = document.cookie;
         }]);
 
-        demoApp.controller('loginController', ['$scope', '$location', '$rootScope', function($scope, $location, $rootScope){
+        demoApp.controller('loginController', ['$scope', '$location', '$rootScope', '$http',
+         function($scope, $location, $rootScope, $http){
             $scope.submit = function() {
 
-                if($scope.email == 'admin@admin.lt' && $scope.password == 'admin'){
+                $http.get('/api/authenticate/' + $scope.email + '/' + $scope password)
+                .success(function(response){
                     $rootScope.loggedIn = true;
                     $location.path('/home');
-                } else {
-                    alert('Incorrect credentials');
-                }
+                });
+
+
             }
 
         }]);
@@ -140,16 +142,16 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
 
 
-           angular.element(document).ready(function () {
-                var date_input=$('input[name="date"]'); //our date input has the name "date"
-                var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-                date_input.datepicker({
-                    format: 'yyyy-mm-dd',
-                    container: container,
-                    todayHighlight: true,
-                    autoclose: true,
-                })
-           });
+//           angular.element(document).ready(function () {
+//                var date_input=$('input[name="date"]'); //our date input has the name "date"
+//                var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+//                date_input.datepicker({
+//                    format: 'yyyy-mm-dd',
+//                    container: container,
+//                    todayHighlight: true,
+//                    autoclose: true,
+//                })
+//           });
         });
 
         demoApp.controller('historyController',['$scope', '$http', '$templateCache',function($scope, $http, $templateCache) {
