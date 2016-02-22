@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<h1>Registruokitės konsultacijai internetu</h1>
+<h1>{{ data.registrationTitle }}</h1>
 <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
 <div class="bootstrap-iso">
     <div class="container-fluid">
@@ -19,7 +19,7 @@
             <div ng-controller="registerController" class="col-md-6 col-sm-6 col-xs-12">
                 <form id="registrationForm">
                         <label class="control-label requiredField" for="name">
-                            Vardas
+                            {{ data.name }}
        <span class="asteriskField">
         *
        </span>
@@ -27,7 +27,7 @@
                         <input class="form-control" id="name" ng-model="name" type="text"/>
 
                         <label class="control-label requiredField" for="surname">
-                            Pavardė
+                            {{ data.surname }}
        <span class="asteriskField">
         *
        </span>
@@ -35,7 +35,7 @@
                         <input class="form-control" id="surname" ng-model="surname" type="text"/>
 
                         <label class="control-label requiredField" for="tel">
-                            Telefonas susisiekti
+                            {{ data.phone }}
        <span class="asteriskField">
         *
        </span>
@@ -43,40 +43,40 @@
                         <input class="form-control" id="tel" ng-model="tel" type="text"/>
 
                         <label class="control-label " for="email">
-                            El. Pa&scaron;tas
+                            {{ data.email }}
                         </label>
                         <input class="form-control" id="email" ng-model="email" type="text"/>
 
                         <label class="control-label requiredField" for="bank">
-                            Banko skyrius
+                            {{ data.registrationBankDepartment }}
        <span class="asteriskField">
         *
        </span>
                         </label>
                         <select class="select form-control" id="bank" ng-model="bank">
                             <option value="Pasirinkite" disabled selected hidden>
-                                Pasirinkite
+                                {{ data.select }}
                             </option>
                             <option value="Antakalnio g. 45">
-                                Antakalnio g. 45
+                                {{ data.registrationBankDepartmentList1 }}
                             </option>
                             <option value='Ateities g. 91 (PC &bdquo;Mandarinas")'>
-                                Ateities g. 91 (PC &bdquo;Mandarinas")
+                                {{ data.registrationBankDepartmentList2 }}
                             </option>
                             <option value="Gedimino pr. 56">
-                                Gedimino pr. 56
+                                {{ data.registrationBankDepartmentList3 }}
                             </option>
                             <option value="Konstitucijos pr. 20A, dirba Būsto Centras">
-                                Konstitucijos pr. 20A, dirba Būsto Centras
+                                {{ data.registrationBankDepartmentList4 }}
                             </option>
                             <option value='Ozo g. 25 (PPC &bdquo;Akropolis")'>
-                                Ozo g. 25 (PPC &bdquo;Akropolis")
+                                {{ data.registrationBankDepartmentList5 }}
                             </option>
                         </select>
 
                     <div>
                         <label class="control-label requiredField" for="date">
-                            Data
+                            {{ data.registrationDate }}
                             <span class="asteriskField">
                             *
                             </span>
@@ -85,14 +85,14 @@
                     </div>
 
                     <label class="control-label requiredField" for="time">
-                        Konsultacijos laikas
+                        {{ data.registrationTime }}
        <span class="asteriskField">
         *
        </span>
                     </label>
                     <select class="select form-control" id="time" ng-model="time">
                         <option value="Pasirinkite" disabled selected hidden>
-                            Pasirinkite
+                            {{ data.select }}
                         </option>
                         <option value="8:00">
                             8:00
@@ -157,37 +157,37 @@
 
 
                         <label class="control-label requiredField" for="subject">
-                            Tema
+                            {{ data.theme }}
        <span class="asteriskField">
         *
        </span>
                         </label>
                         <select class="select form-control" id="subject" ng-model="subject">
                             <option value="Pasirinkite" disabled selected hidden>
-                                Pasirinkite
+                                {{ data.select }}
                             </option>
                             <option value="Taupymas ir investavimas">
-                                Taupymas ir investavimas
+                                {{ data.themeList1 }}
                             </option>
                             <option value="Pensijos ir kaupimas">
-                                Pensijos ir kaupimas
+                                {{ data.themeList2 }}
                             </option>
                             <option value="Gyvybės draudimas">
-                                Gyvybės draudimas
+                                {{ data.themeList3 }}
                             </option>
                             <option value="Ne gyvybės draudimas">
-                                Ne gyvybės draudimas
+                                {{ data.themeList4 }}
                             </option>
                             <option value="Paskolos, lizingas">
-                                Paskolos, lizingas
+                                {{ data.themeList5 }}
                             </option>
                             <option value="Kasdienių finansų valdymas">
-                                Kasdienių finansų valdymas
+                                {{ data.themeList6 }}
                             </option>
                         </select>
 
                         <label class="control-label " for="message">
-                            Pastabos, komentarai
+                            {{ data.registrationMessage }}
                         </label>
                         <textarea class="form-control" cols="40" id="message" ng-model="message" rows="10"></textarea>
 
@@ -195,7 +195,7 @@
                         <!--Siųsti-->
                         <!--</button>-->
                         <hr class="colorgraph">
-                        <button type="button" ng-click="submit()" class="btn btn-primary btn-block btn-lg">Registruoti</button>
+                        <button type="button" ng-click="submit()" class="btn btn-primary btn-block btn-lg">{{ data.buttonSend }}</button>
 
                 </form>
                 <!--<form role="form">-->
