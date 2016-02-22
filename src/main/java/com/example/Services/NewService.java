@@ -124,8 +124,8 @@ public class NewService {
 //        return uid;
 //    }
 
-    @RequestMapping(value = "/api/authenticate", method = RequestMethod.GET)
-    public int doSmth(String email, String password)
+    @RequestMapping(value = "/api/authenticate/{email}/{password}", method = RequestMethod.GET)
+    public int doSmth(@PathVariable String email, @PathVariable String password)
     {
         int userID;
         String uid = "";

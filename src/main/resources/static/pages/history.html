@@ -11,21 +11,19 @@
     <script src="angular.js"></script>
     <script src="angular-route.js"></script>
     <script src="angular-cookies.min.js"></script>
-    <script src="index.js"></script>
     <link rel="stylesheet" type="text/css" href="extra/style.css">
 
 </head>
-<body class="container" ng-controller="historyController" ng-init="fetch()">
+<body class="container">
     <h1>Esamos registracijos 3</h1>
 
+<div ng-controller="historyController" ng-init="fetch()">
     <pre>http status code: {{status}}</pre>
-    <pre>http response data: {{dataHistory}}</pre>
-    <pre>http response data: {{dataHistory[0]}}</pre>
+    <pre>http response data: {{data[0].registrationDate}}</pre>
 
 
     <div class="row">
         <div class="col-xs-12">
-
             <table class="table table-hover">
                 <thead>
                 <tr>
@@ -39,37 +37,40 @@
 
                 <tbody>
 
+
+
                 <tr>
 
                     <td onClick="" data-title="'Check">
-                        <input type="checkbox" value="checkbox" ng-model="{{dataHistory[0].registrationID}}" />
+                        <input type="checkbox" value="checkbox" ng-model="{{data[0].registrationID}}" />
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Data'">
-                        {{dataHistory[0].registrationDate}}
+                        {{data[0].registrationDate}}
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Laikas'">
-                        <p>{{dataHistory[0].registrationTime}}</p>
+                        <p>{{data[0].registrationTime}}</p>
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Banko skyrius'">
-                        <p>{{dataHistory[0].bankDepartment}}</p>
+                        <p>{{data[0].bankDepartment}}</p>
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Tema'">
-                        <p>{{dataHistory[0].dropDownList}}</p>
+                        <p>{{data[0].dropDownList}}</p>
                     </td>
 
                 </tr>
 
+
                 </tbody>
             </table>
-
 
             <button type="button" ng-click="delete()" class="btn btn-primary btn-block btn-lg">Pasalinti</button>
 
 
+        </div>
     </div>
 </div>
 
