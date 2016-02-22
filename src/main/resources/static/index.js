@@ -41,21 +41,21 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             .otherwise({ redirectTo: '/'});
         });
 
-        demoApp.controller('loginCrtl', function($scope, $location)
-        {
-            $scope.submit = function()
-            {
-                if($scope.username == 'admin' $$ $scope.password == 'admin')
-                {
-                    $rootScope.username = $scope.username;
-                    $rootScope.password = $scope.password;
-                    $location.path('/home');
-                }else
-                {
-                    alert('Wrong stuff')
-                }
-            };
-        });
+//        demoApp.controller('loginCrtl', function($scope, $location)
+//        {
+//            $scope.submit = function()
+//            {
+//                if($scope.username == 'admin' $$ $scope.password == 'admin')
+//                {
+//                    $rootScope.username = $scope.username;
+//                    $rootScope.password = $scope.password;
+//                    $location.path('/home');
+//                }else
+//                {
+//                    alert('Wrong stuff')
+//                }
+//            };
+//        });
 
         demoApp.controller('ContactCtrl',function($scope, $http, $location)
         {
