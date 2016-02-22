@@ -39,26 +39,26 @@
 
 
 
-                <tr ng-repeat="form in data track by $index">
+                <tr>
 
                     <td onClick="" data-title="'Check">
-                        <input type="checkbox" value="checkbox" ng-model="{{form.registrationID}}" />
+                        <input type="checkbox" value="checkbox" ng-model="{{data[0].registrationID}}" />
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Data'">
-                        {{form.registrationDate}}
+                        {{data[0].registrationDate}}
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Laikas'">
-                        {{form.registrationTime}}
+                        {{data[0].registrationTime}}
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Banko skyrius'">
-                        {{form.bankDepartment}}
+                        {{data[0].bankDepartment}}
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Tema'">
-                        {{form.dropDownList}}
+                        {{data[0].dropDownList}}
                     </td>
 
                 </tr>
