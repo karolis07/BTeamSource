@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="539356fd-58ad-4620-b9b1-365d30102ae1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/index.js" afterPath="$PROJECT_DIR$/src/main/resources/static/index.js" />
     </list>
     <ignored path="US1_BTeam.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,8 +45,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.7304583">
-              <caret line="119" column="69" selection-start-line="119" selection-start-column="69" selection-end-line="119" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.5660377">
+              <caret line="113" column="108" selection-start-line="113" selection-start-column="108" selection-end-line="113" selection-end-column="108" />
               <folding />
             </state>
           </provider>
@@ -1360,12 +1361,6 @@
       <workItem from="1456133342919" duration="8727000" />
       <workItem from="1456142150064" duration="1404000" />
     </task>
-    <task id="LOCAL-00068" summary="try register">
-      <created>1456058394197</created>
-      <option name="number" value="00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1456058394197</updated>
-    </task>
     <task id="LOCAL-00069" summary="try register">
       <created>1456058568842</created>
       <option name="number" value="00069" />
@@ -1654,7 +1649,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456157854013</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="new login">
+      <created>1456175701031</created>
+      <option name="number" value="00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1456175701031</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1703,7 +1704,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Mapping works" />
     <MESSAGE value="Routes work" />
     <MESSAGE value="Registration form" />
     <MESSAGE value="Roll back from DB commit" />
@@ -1728,7 +1728,8 @@
     <MESSAGE value="new login test" />
     <MESSAGE value="new login test another try" />
     <MESSAGE value="added userid, changes in login" />
-    <option name="LAST_COMMIT_MESSAGE" value="added userid, changes in login" />
+    <MESSAGE value="new login" />
+    <option name="LAST_COMMIT_MESSAGE" value="new login" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2113,8 +2114,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7304583">
-          <caret line="119" column="69" selection-start-line="119" selection-start-column="69" selection-end-line="119" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.5660377">
+          <caret line="113" column="108" selection-start-line="113" selection-start-column="108" selection-end-line="113" selection-end-column="108" />
           <folding />
         </state>
       </provider>

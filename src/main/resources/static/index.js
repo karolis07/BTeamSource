@@ -111,7 +111,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'Authentication'
 
                                     ----------------------------------------------*/
 
-                                   $http.post('/api/authenticate/' + { username: username } + '/' + {password: password })
+                                   $http.post('/api/authenticate/' + $scope.username + '/' + $scope.password)
                                        .success(function (response) {
                                            callback(response);
                                       });
