@@ -60,56 +60,6 @@
     text-wrap: normal;
     color: darkgray;
 }
-.login {
-    border-radius: 7%;
-    box-shadow: 3px 3px 15px black;
-    background-color: #48c100;
-    margin-left: 38%;
-    margin-bottom: 2%;
-    padding: 1.5%;
-    width: 18%;
-    height: 100%;
-    color: azure;
-    float: left;
-    overflow: hidden;
-    align-items: center;
-}
-.columnWriteUs {
-    margin-left: 16.5%;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    width: 18%;
-    height: 100%;
-    float: left;
-    overflow: hidden;
-    align-items: center;
-}
-.columnRegister {
-    margin-top: 3%;
-    margin-left: 1%;
-    margin-bottom: 3%;
-    width: 18%;
-    height: 100%;
-    float: left;
-    overflow: hidden;
-    align-items: center;
-}
-.columnMyReg {
-    margin-top: 3%;
-    margin-bottom: 3%;
-    margin-left: 2%;
-    width: 18%;
-    height: 100%;
-    float: left;
-    overflow: hidden;
-    align-items: center;
-}
-.checkboxStyle{
-    width:15px;
-    height:15px;
-    color: #48c100;
-    background-color: #48c100;
-}
 /*--------------------------------------------------------------------------------------------------------
 ---------------------------------------- LOGIN BUTTON ----------------------------------------------------
 --------------------------------------------------------------------------------------------------------*/
@@ -150,6 +100,89 @@
 /*--------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------*/
+.login {
+    border-radius: 7%;
+    box-shadow: 3px 3px 15px black;
+    background-color: #48c100;
+    margin-left: 38%;
+    margin-bottom: 2%;
+    padding: 1.5%;
+    width: 18%;
+    height: 100%;
+    color: azure;
+    float: left;
+    overflow: hidden;
+    align-items: center;
+}
+.loginLabel{
+    background-image: url("NOcontactus.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 264px;
+    width: 100%;
+}
+.loginLabelText{
+    width: 100%;
+    height: 100%;
+    color: azure;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*--------------------------------------------------------------------------------------------------------
+---------------------------------------- HOME PAGE -------------------------------------------------------
+--------------------------------------------------------------------------------------------------------*/
+.contactUs{
+    background-image: url("contactus.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 264px;
+    width: 100%;
+}
+.contactUsText{
+    width: 100%;
+    height: 100%;
+    color: azure;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.columnWriteUs {
+    margin-left: 16.5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    width: 18%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    align-items: center;
+}
+.columnRegister {
+    margin-top: 3%;
+    margin-left: 1%;
+    margin-bottom: 3%;
+    width: 18%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    align-items: center;
+}
+.columnMyReg {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 2%;
+    width: 18%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    align-items: center;
+}
+.checkboxStyle{
+    width:15px;
+    height:15px;
+    color: #48c100;
+    background-color: #48c100;
+}
 .buttonWriteUs {
     background-image: url("write_us.png");
     background-size: 100% 100%;
@@ -186,3 +219,6 @@
     align-items: center;
     justify-content: center;
 }
+/*--------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------*/
