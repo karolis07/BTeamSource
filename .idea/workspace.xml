@@ -46,8 +46,18 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27980295">
-              <caret line="218" column="64" selection-start-line="218" selection-start-column="64" selection-end-line="218" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.74876845">
+              <caret line="246" column="59" selection-start-line="246" selection-start-column="59" selection-end-line="246" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Language.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Config/Language.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.310345">
+              <caret line="128" column="42" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -110,8 +120,8 @@
       <file leaf-file-name="history.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/pages/history.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.576923">
-              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+            <state vertical-scroll-proportion="-19.076923">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1294,13 +1304,7 @@
       <workItem from="1456132038689" duration="1243000" />
       <workItem from="1456133342919" duration="8727000" />
       <workItem from="1456142150064" duration="1404000" />
-      <workItem from="1456222478703" duration="2834000" />
-    </task>
-    <task id="LOCAL-00081" summary="try register">
-      <created>1456065358589</created>
-      <option name="number" value="00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1456065358589</updated>
+      <workItem from="1456222478703" duration="3398000" />
     </task>
     <task id="LOCAL-00082" summary="try register">
       <created>1456065600587</created>
@@ -1590,11 +1594,17 @@
       <option name="project" value="LOCAL" />
       <updated>1456224955859</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="History check">
+      <created>1456225319083</created>
+      <option name="number" value="00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1456225319083</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16395000" />
+    <option name="totallyTimeSpent" value="16959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-356" y="-1208" width="1936" height="1176" extended-state="6" />
@@ -1981,14 +1991,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Config/Language.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="104" column="5" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/pages/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.230769">
@@ -2028,18 +2030,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Config/Language.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.310345">
+          <caret line="128" column="42" selection-start-line="128" selection-start-column="25" selection-end-line="128" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/pages/history.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        <state vertical-scroll-proportion="-19.076923">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27980295">
-          <caret line="218" column="64" selection-start-line="218" selection-start-column="64" selection-end-line="218" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.74876845">
+          <caret line="246" column="59" selection-start-line="246" selection-start-column="59" selection-end-line="246" selection-end-column="59" />
           <folding />
         </state>
       </provider>

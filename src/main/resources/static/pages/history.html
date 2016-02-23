@@ -5,22 +5,19 @@
     <title>History</title>
 </head>
 <body class="container">
-    <h1>Esamos registracijos 3</h1>
+    <h1>{{ data.homeButtonHistory }}</h1>
 <div>
-    <pre>http status code: {{ statusHistory }}</pre>
-    <pre>http response data: {{ dataHistory.registrationDate[0] }}</pre>
-    <pre>http response data: {{ dataHistory[0].registrationDate }}</pre>
 
     <div class="row">
         <div class="col-xs-12">
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th></th>
                     <th>{{ data.registrationDate }}</th>
                     <th>{{ data.registrationTime }}</th>
                     <th>{{ data.registrationBankDepartment }}</th>
                     <th>{{ data.theme }}</th>
+                    <th></th>
                 </tr>
                 </thead>
 
@@ -29,7 +26,6 @@
 
                 <div>
                 <tr ng-controller="historyController" ng-init="fetch()">
-
                     <td data-title="Data">
                         {{ dataHistory[0].registrationDate }}
                     </td>
@@ -46,14 +42,14 @@
                         <p>{{ dataHistory[0].dropDownList }}</p>
                     </td>
 
+                    <td>
+                        <button type="button" ng-click="delete({{ dataHistory[0].registrationID }})" class="btn btn-primary btn-block btn-lg">Pasalinti</button>
+                    </td>
                 </tr>
                 </div>
 
                 </tbody>
             </table>
-
-            <button type="button" ng-click="delete()" class="btn btn-primary btn-block btn-lg">Pasalinti</button>
-
 
         </div>
     </div>
