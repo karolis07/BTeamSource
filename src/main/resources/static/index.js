@@ -166,6 +166,25 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                         $scope.status = response.status;
                         $rootScope.data = $scope.data;
                     });
+                } else {
+                    $scope.code = null;
+                    $scope.response = null;
+                    $scope.bla = $rootScope;
+
+                    if (cookie == "lt")
+                        $scope.url = "/lt";
+                    else
+                        $scope.url = "/en";
+
+                    $http({method: 'GET', url: $scope.url, cache: $templateCache}).then(function (response) {
+                        $scope.status = response.status;
+                        $scope.data = response.data;
+                        $rootScope.data = $scope.data;
+                    }, function (response) {
+                        $scope.data = response.data || "Request failed";
+                        $scope.status = response.status;
+                        $rootScope.data = $scope.data;
+                    });
                 }
             };
         }]);
