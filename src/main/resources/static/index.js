@@ -12,7 +12,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
         $routeProvider
             .when('/',
             {
-                controller: 'loginCtrl',
+                controller: 'loginController',
                 templateUrl: 'pages/login.html'
             })
             .when('/register',
@@ -32,13 +32,13 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             })
             .when('/home',
             {
-//                resolve: {
-//                    "check": function($location, $rootScope) {
-//                        if(!$rootScope.loggedIn){
-//                            $location.path('/');
-//                        }
-//                    }
-//                },
+                resolve: {
+                    "check": function($location, $rootScope) {
+                        if(!$rootScope.loggedIn){
+                            $location.path('/');
+                        }
+                    }
+                },
                 templateUrl: 'pages/home.html'
 
             })
@@ -62,34 +62,20 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             document.cookie = "someCookieName=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
             $scope.cookies = document.cookie;
         }]);
-        //run reikalinga loginui
-        demoApp.run(function($rootScope, $location, loginService){
-        	var routespermission=['/home'];  //route that require login
-        	$rootScope.$on('$routeChangeStart', function(){
-        		if( routespermission.indexOf($location.path()) !=-1)
-        		{
-        			var connected=loginService.islogged();
-        			connected.then(function(msg){
-        				if(!msg.data) $location.path('/');
-        			});
-        		}
-        	});
-        });
 
-//        demoApp.controller('loginController', ['$scope', '$location', '$rootScope', '$http',
-//         function($scope, $location, $rootScope, $http){
-//            $scope.submit = function() {
-//
-//                $http.get('/api/authenticate/' + $scope.email + '/' + $scope.password)
-//                .success(function(response){
-//                    $rootScope.loggedIn = true;
-//                    $location.path('/home');
-//                });
-//
-//
-//            };
-//
-//        }]);
+
+        demoApp.controller('loginController', ['$scope', '$location', '$rootScope', '$http',
+         function($scope, $location, $rootScope, $http){
+            $scope.submit = function() {
+
+                if($scope.email == 'admin@admin.lt' && $scope.password == 'admin'){
+
+                    $rootScope.loggedIn = true;
+                    $location.path('/home');
+                }
+            };
+
+        }]);
 
 
         demoApp.controller('languages',['$scope', '$http', '$rootScope', '$templateCache',function($scope, $http, $rootScope, $templateCache) {
