@@ -4,6 +4,16 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
         $routeProvider
             .when('/',
             {
+                resolve: {
+                    "check": function($location, $cookies) {
+                        var login = $cookies.get('login');
+                        if(login == null){
+                            $location.path('/');
+                        } else {
+                            $location.path('/home');
+                        }
+                    }
+                },
                 controller: 'loginController',
                 templateUrl: 'pages/login.html'
             })
