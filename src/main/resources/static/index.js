@@ -30,7 +30,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             {
                 resolve: {
                     "check": function($location, $cookies) {
-                    var login = cookies.get('login');
+                    var login = $cookies.get('login');
                         if(login == null){
                             $location.path('/');
                         }
