@@ -73,27 +73,28 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                 $scope.submit = function() {
                     $scope.code = null;
                     $scope.response = null;
-                    $scope.url = "/api/authenticate"+"/"+$scope.email+"/"+$scope.password;
+                    $scope.url = "/api/authenticate";
 
-                    $http({method: 'GET', url: $scope.url, cache: $templateCache}).
-                    then(function(response) {
-                        $scope.status = response.status;
-                        $scope.data = response.data;
-                        $rootScope.userID = $scope.data;
-                    }, function(response) {
-                        $scope.data = response.data || "Request failed";
-                        $scope.status = response.status;
-                        $rootScope.userID = $scope.data;
-                    });
+                    $http({method: 'POST', url: $scope.url, data: {"email": $scope.email, "password": $scope.password}}).
+                    then(function successCallback(response) {
+                        if(response.data != "-1")
+                        {
+                            $rootScope.userID = response.data;
+                            $location.path('/home');
+                        }}, function errorCallback(response)
+                        {
+                            alert("Error");
+                        }
+                    );
 
-                    if($rootScope.userID != '-1')
-                    {
-                        $rootScope.loggedIn = true;
-                    }
-                    else
-                    {
-                        $rootScope.loggedIn = false;
-                    }
+        //                if($rootScope.userID != '-1')
+        //                {
+        //                    $rootScope.loggedIn = true;
+        //                }
+        //                else
+        //                {
+        //                    $rootScope.loggedIn = false;
+        //                }
 
         //                if($scope.email == 'admin@admin.lt' && $scope.password == 'admin'){
         //
@@ -149,32 +150,17 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             $scope.fetch = function() {
                 var cookie = $cookies.get('language');
 
-                if (cookie == null) {
-                    $scope.code = null;
-                    $scope.response = null;
-                    $scope.bla = $rootScope;
-                    $scope.url = "/lt";
-
-                    $cookies.put('language', 'lt');
-
-                    $http({method: 'GET', url: $scope.url, cache: $templateCache}).then(function (response) {
-                        $scope.status = response.status;
-                        $scope.data = response.data;
-                        $rootScope.data = $scope.data;
-                    }, function (response) {
-                        $scope.data = response.data || "Request failed";
-                        $scope.status = response.status;
-                        $rootScope.data = $scope.data;
-                    });
-                } else {
                     $scope.code = null;
                     $scope.response = null;
                     $scope.bla = $rootScope;
 
-                    if (cookie == "lt")
+                    if ((cookie == null) || (cookie == "lt")) {
                         $scope.url = "/lt";
-                    else
+                        $cookies.put('language', 'lt');
+                    } else if (cookie == "en"){
                         $scope.url = "/en";
+                        $cookies.put('language', 'en');
+                    }
 
                     $http({method: 'GET', url: $scope.url, cache: $templateCache}).then(function (response) {
                         $scope.status = response.status;
@@ -185,7 +171,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                         $scope.status = response.status;
                         $rootScope.data = $scope.data;
                     });
-                }
+
             };
         }]);
 
