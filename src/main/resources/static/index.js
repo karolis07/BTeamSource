@@ -73,7 +73,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                     $rootScope.loggedIn = true;
                     $location.path('/home');
                 }
-            };
+            }
 
         }]);
 
