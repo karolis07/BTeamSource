@@ -1,8 +1,3 @@
-/*
-
-DEL USER ID SAUGOJIMO IR PERDAVIMO NAUDOTI $ROOTSCOPE.USERID
-
-*/
 var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
     demoApp.config(function($routeProvider){
@@ -14,16 +9,40 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             })
             .when('/register',
             {
+            resolve: {
+                                "check": function($location, $cookies) {
+                                var login = $cookies.get('login');
+                                    if(login == null){
+                                        $location.path('/');
+                                    }
+                                }
+                            },
                 controller: 'registerController',
                 templateUrl: 'pages/registration.html'
             })
             .when('/contact',
             {
+            resolve: {
+                                "check": function($location, $cookies) {
+                                var login = $cookies.get('login');
+                                    if(login == null){
+                                        $location.path('/');
+                                    }
+                                }
+                            },
                 controller: 'contactController',
                 templateUrl: 'pages/contact.html'
             })
             .when('/history',
             {
+            resolve: {
+                                            "check": function($location, $cookies) {
+                                            var login = $cookies.get('login');
+                                                if(login == null){
+                                                    $location.path('/');
+                                                }
+                                            }
+                                        },
                  templateUrl: 'pages/history.html'
             })
             .when('/home',
@@ -54,65 +73,6 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                     $location.url('/home');
                 };
         });
-/*
-
-
-//var email = $( "#emailField" ).val();
-//    var password = $( "#passwordField" ).val();
-//    $http({
-//        method: 'POST',
-//                url: $rootScope.url+'/authenticate',
-//                data: { "email": email, "pass": password }
-//    }).then(function successCallback(response) {
-//        if(response.data != "")
-//        {
-//        $rootScope.user = response.data;
-//        $window.location.href = '/#/home';
-//        }else
-//        {
-//        $("#wrongPassword").show();
-//        setTimeout(function(){ $("#wrongPassword").hide(); }, 3000);
-//        }
-//        }, function errorCallback(response) {
-//        alert("Problemos su interneto ryšiu");
-//        });
-
-        demoApp.controller('loginController', ['$scope', '$location', '$rootScope', '$templateCache', '$http',
-         function($scope, $location, $rootScope, $templateCache, $http){
-            $scope.submit = function() {
-                $scope.code = null;
-                $scope.response = null;
-                $scope.url = "/api/authenticate";
-
-                $http({method: 'POST', url: $scope.url, data: {"email": $scope.email.val(), "password": $scope.password}}).
-                                then(function successCallback(response) {
-                                    if(response.data != "-1")
-                                    {
-                                        $rootScope.userID = response.data;
-                                        $location.path('/home');
-                                    }}. function errorCallback(response)
-                                    {
-                                        alert("Error");
-                                    }
-                                    )
-
-//                if($rootScope.userID != '-1')
-//                {
-//                    $rootScope.loggedIn = true;
-//                }
-//                else
-//                {
-//                    $rootScope.loggedIn = false;
-//                }
-
-//                if($scope.email == 'admin@admin.lt' && $scope.password == 'admin'){
-//
-//                    $rootScope.loggedIn = true;
-//                    $location.path('/home');
-//                }
-            }
-
-        }]);*/
 
         demoApp.controller('loginController', ['$cookies', '$scope', '$location', '$rootScope', '$templateCache', '$http',
             function($cookies, $scope, $location, $rootScope, $templateCache, $http){
@@ -130,24 +90,10 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                             $location.path('/home');
                         }}, function errorCallback(response)
                         {
+                            $location.path('/');
                             alert("Error");
                         }
                     );
-
-        //                if($rootScope.userID != '-1')
-        //                {
-        //                    $rootScope.loggedIn = true;
-        //                }
-        //                else
-        //                {
-        //                    $rootScope.loggedIn = false;
-        //                }
-
-        //                if($scope.email == 'admin@admin.lt' && $scope.password == 'admin'){
-        //
-        //                    $rootScope.loggedIn = true;
-        //                    $location.path('/home');
-        //                }
                 }
 
             }]);
@@ -260,18 +206,6 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                 $location.url('/home');
            };
 
-
-
-//           angular.element(document).ready(function () {
-//                var date_input=$('input[name="date"]'); //our date input has the name "date"
-//                var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-//                date_input.datepicker({
-//                    format: 'yyyy-mm-dd',
-//                    container: container,
-//                    todayHighlight: true,
-//                    autoclose: true,
-//                })
-//           });
         });
 
         demoApp.controller('historyController',['$scope', '$http', '$templateCache',function($scope, $http, $templateCache) {
