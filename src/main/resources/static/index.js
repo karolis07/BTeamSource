@@ -53,11 +53,6 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                     $location.url('/home');
                 };
         });
-
-        demoApp.controller('cookieController', ['$scope', function($scope) {
-            document.cookie = "someCookieName=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-            $scope.cookies = document.cookie;
-        }]);
 /*
 
         demoApp.controller('loginController', ['$scope', '$location', '$rootScope',
@@ -91,13 +86,6 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                         $rootScope.userID = $scope.data;
                     });
 
-                    $scope.ltLanguage = function() {
-                        document.cookie = "lt";
-                    };
-                    $scope.enLanguage = function() {
-                        document.cookie = "en";
-                    };
-
                     if($rootScope.userID != '-1')
                     {
                         $rootScope.loggedIn = true;
@@ -118,16 +106,32 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
         demoApp.controller('languages',['$scope', '$http', '$rootScope', '$templateCache',function($scope, $http, $rootScope, $templateCache) {
 
-            $scope.fetch = function() {
+            $scope.ltLanguage = function() {
                 $scope.code = null;
                 $scope.response = null;
                 $scope.bla = $rootScope;
+                $scope.url = "/lt";
 
-                if (document.cookie = "lt") {
-                    $scope.url = "/lt";
-                } else {
-                    $scope.url = "/en";
-                }
+                $scope.a = function(){
+                    $scope.data = $rootScope.data;
+                };
+
+                $http({method: 'GET', url: $scope.url, cache: $templateCache}).
+                then(function(response) {
+                    $scope.status = response.status;
+                    $scope.data = response.data;
+                    $rootScope.data = $scope.data;
+                }, function(response) {
+                    $scope.data = response.data || "Request failed";
+                    $scope.status = response.status;
+                    $rootScope.data = $scope.data;
+                });
+            };
+            $scope.enLanguage = function() {
+                $scope.code = null;
+                $scope.response = null;
+                $scope.bla = $rootScope;
+                $scope.url = "/en";
 
                 $scope.a = function(){
                     $scope.data = $rootScope.data;
