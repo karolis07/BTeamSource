@@ -226,7 +226,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
         });
 
-        demoApp.controller('historyController',['$cookies', '$scope', '$rootScope', '$http', '$templateCache',function($cookies, $scope, $rootScope, $http, $templateCache) {
+        demoApp.controller('historyController',['$location', '$cookies', '$scope', '$rootScope', '$http', '$templateCache',function($location, $cookies, $scope, $rootScope, $http, $templateCache) {
 
             var userID = $cookies.get('userID');
             var ID = null;
