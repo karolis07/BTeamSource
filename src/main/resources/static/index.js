@@ -238,7 +238,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'ngMessages']);
 
             $scope.view = function(ID) {
                 $http.get('/api/history/view/' + userID + "/" + ID);
-                $location.url('/history');
+                $location.url('/api/history/view/' + userID + "/" + ID);
             };
 
             $scope.fetch = function() {

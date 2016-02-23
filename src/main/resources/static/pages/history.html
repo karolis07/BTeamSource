@@ -24,10 +24,10 @@
                 <tbody>
 
 
-                <div>
+                <div ng-controller="historyController" ng-init="fetch()">
                     <input type="search" ng-model="q" placeholder="filter friends..." aria-label="filter friends" />
 
-                <tr ng-controller="historyController" ng-init="fetch()" ng-repeat="dataHistory in dataHistory | filter:q as results">
+                <tr ng-repeat="dataHistory in dataHistory | filter:q as results">
                     <td data-title="Data">
                         {{ dataHistory.registrationDate }}
                     </td>
@@ -45,8 +45,8 @@
                     </td>
 
                     <td>
-                        <button type="button" ng-click="view( dataHistory.registrationID )" class="btn btn-primary btn-block btn-lg">Perziureti</button>
-                        <button type="button" ng-click="delete( dataHistory.registrationID )" class="btn btn-primary btn-block btn-lg">Pasalinti</button>
+                        <button type="button" ng-click="view( dataHistory.registrationID )">{{ data.historyButtonLook }}</button>
+                        <button type="button" ng-click="delete( dataHistory.registrationID )">{{ data.historyButtonDelete }}</button>
                     </td>
                 </tr>
 
