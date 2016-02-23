@@ -100,11 +100,10 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'ngMessages']);
                             $cookies.put('login', 'true');
                             $cookies.put('userID', response.data);
                             $location.path('/home');
-                        }}, function errorCallback(response)
-                        {
-                            alert("Error");
+                        } else {
                             $location.path('/');
                         }
+                    }
                     );
                 }
 
