@@ -130,6 +130,10 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                 });
             };
 
+            $scope.logout = function(){
+                $cookies.remove('login');
+            };
+
             $scope.enLanguage = function() {
                 $scope.code = null;
                 $scope.response = null;

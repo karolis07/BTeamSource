@@ -97,13 +97,14 @@ public class Language {
         // MISC
         fieldsNames.put("buttonSend","Siųsti");
         fieldsNames.put("buttonBack","< Atgal");
-
+        fieldsNames.put("logout", "Atsijungti");
         return fieldsNames;
     }
 
     public Map<String,String> getEN()
     {
         fieldsNames = new HashMap<String, String>();
+        fieldsNames.put("logout", "Logout");
 
         // LOGIN
         fieldsNames.put("titleOne","IT Academy Bank");
