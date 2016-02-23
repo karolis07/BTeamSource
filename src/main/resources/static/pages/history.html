@@ -25,7 +25,7 @@
 
 
                 <div ng-controller="historyController" ng-init="fetch()">
-                    <input type="search" ng-model="q" placeholder="filter friends..." aria-label="filter friends" />
+                    <input type="search" ng-model="q" placeholder="{{ data.search }}" aria-label="filter dataHistory" />
 
                 <tr ng-repeat="dataHistory in dataHistory | filter:q as results">
                     <td data-title="Data">
@@ -52,7 +52,7 @@
 
                 <tr>
                         <td ng-if="dataHistory.length == 0">
-                            <strong>No results found...</strong>
+                            <strong>{{ data.noData }}</strong>
                         </td>
                 </tr>
 

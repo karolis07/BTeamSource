@@ -106,6 +106,8 @@ public class Language {
         fieldsNames.put("buttonSend","Siųsti");
         fieldsNames.put("buttonBack","< Atgal");
         fieldsNames.put("logout", "Atsijungti");
+        fieldsNames.put("noData", "Nėra rezultatų...");
+        fieldsNames.put("search", "Filtravimas...");
         return fieldsNames;
     }
 
@@ -209,6 +211,8 @@ public class Language {
         // MISC
         fieldsNames.put("buttonSend","Send");
         fieldsNames.put("buttonBack","< Back");
+        fieldsNames.put("noData", "No results found...");
+        fieldsNames.put("search", "Filter...");
 
         return fieldsNames;
     }
