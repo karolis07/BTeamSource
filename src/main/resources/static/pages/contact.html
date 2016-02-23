@@ -30,6 +30,9 @@
         <div class="container">
             <div ng-controller="contactController" class="row" style="margin-left: 30%;">
                 <form role="form" name="contactForm" novalidate>
+                    <div ng-messages="contactForm.$submitted && (contactForm.InputMessage.$error|| contactForm.first_name.$error || contactForm.phone_number.$error|| contactForm.email.$error || contactForm.theme.$error)"  role="alert">
+                        <div style="color:red" ng-message="required"> Užpildykite privalomus laukus *</div>
+                    </div>
                     <div class="col-lg-6">
 
                         <select id="theme" name="theme" ng-model="theme" style="margin-bottom: 5%" required>
@@ -41,20 +44,21 @@
                             <option value="{{ data.themeList5 }}">{{ data.themeList5 }}</option>
                             <option value="{{ data.themeList6 }}">{{ data.themeList6 }}</option>
                         </select>
-                        <p ng-show="contactForm.theme.$error.required">{{ data.themeError }}</p>
+
+
 
                         <br>
                         <label for="InputMessage">{{ data.contactMessage }}</label>
                         <div class="input-group">
                             <textarea ng-model="InputMessage" id="InputMessage" name="InputMessage" class="form-control" rows="5" required></textarea>
                             <span class="input-group-addon"></span>
-                            <p ng-show="contactForm.InputMessage.$error.required">{{data.messageError}}</p>
+
                         </div>
 
 
                         <input type="text" ng-model="first_name" id="first_name" name="first_name" class="form-control input-lg"
                                placeholder="{{ data.name }}" tabindex="1" style="margin-top: 5%" required>
-                        <p ng-show="contactForm.first_name.$error.required">{{data.nameError}}</p>
+
 
 
 
@@ -64,12 +68,12 @@
 
                         <input type="text" ng-model="phone_number" id="phone_number" name="phone_number" class="form-control input-lg"
                                placeholder="{{ data.phone }}" tabindex="3" style="margin-top: 5%" required>
-                        <p ng-show="contactForm.phone_number.$error.required">{{data.phoneError}}</p>
+
 
 
                         <input type="email" ng-model="email" id="email" name="email" class="form-control input-lg"
                                placeholder="{{ data.email }}" tabindex="4" style="margin-top: 5%" required>
-                        <p ng-show="contactForm.email.$error.required">{{data.emailError}}</p>
+
 
 
                         <label for="InputMessage" style="margin-top: 5%">{{ data.contactAnswer }} </label><br>

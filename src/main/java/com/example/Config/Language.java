@@ -53,6 +53,7 @@ public class Language {
         fieldsNames.put("nameError","Prašome nurodyti savo vardą");
         fieldsNames.put("phoneError", "Prašome nurodyti savo telefono numerį");
         fieldsNames.put("emailError", "Prašome nurodyti savo el. pašto adresą");
+        fieldsNames.put("errorMessage", "Užpildykite privalomus laukus *");
 
         // CONTACT CONFIRMATION
 
@@ -161,6 +162,7 @@ public class Language {
         fieldsNames.put("nameError","Please provide Your name");
         fieldsNames.put("phoneError", "Please provide Your phone number");
         fieldsNames.put("emailError", "Please provide Your email address");
+        fieldsNames.put("errorMessage", "Fill required fields *");
 
         // CONTACT CONFIRMATION
 
