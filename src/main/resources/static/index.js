@@ -243,10 +243,10 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                 $http({method: 'GET', url: $scope.url, cache: $templateCache}).
                   then(function(response) {
                     $scope.statusHistory = response.status;
-                    $scope.dataHistory = response.data;
+                    $rootScope.dataHistory = response.data;
                   }, function(response) {
                     $scope.dataHistory = response.data || "Request failed";
-                    $scope.statusHistory = response.status;
+                    $rootScope.statusHistory = response.status;
                 });
             };
         }]);
