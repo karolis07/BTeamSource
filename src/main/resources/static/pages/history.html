@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>History</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body class="container">
     <h1>{{ data.homeButtonHistory }}</h1>
@@ -44,9 +49,43 @@
                     </td>
 
                     <td>
-                        <button type="button" ng-click="view( dataHistory.registrationID )">{{ data.historyButtonLook }}</button>
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="view( dataHistory.registrationID )">{{ data.historyButtonLook }}</button>
                         <button type="button" ng-click="delete( dataHistory.registrationID )">{{ data.historyButtonDelete2 }}</button>
                     </td>
+                    <!-- POP UP --->
+                    <div class="container">
+                        <!-- Trigger the modal with a button -->
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>{{ data.name }} {{ dataView.name }}</p>
+                                        <p>{{ data.surname }} {{ dataView.surname }}</p>
+                                        <p>{{ data.email }} {{ dataView.email }}</p>
+                                        <p>{{ data.phone }} {{ dataView.phoneNo }}</p>
+                                        <p>{{ data.registrationBankDepartment }} {{ dataView.bankDepartment }}</p>
+                                        <p>{{ data.registrationDate }} {{ dataView.registrationDate }}</p>
+                                        <p>{{ data.registrationTime }} {{ dataView.registrationTime }}</p>
+                                        <p>{{ data.theme }} {{ dataView.dropDownList }}</p>
+                                        <p>{{ data.registrationMessage }} {{ dataView.message }}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- POP UP --->
                 </tr>
 
                 <tr>
