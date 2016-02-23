@@ -108,6 +108,7 @@ public class Language {
         fieldsNames.put("logout", "Atsijungti");
         fieldsNames.put("noData", "Nėra rezultatų...");
         fieldsNames.put("search", "Filtravimas...");
+        fieldsNames.put("historyButtonDelete2", "Ištrinti");
         return fieldsNames;
     }
 
@@ -201,6 +202,7 @@ public class Language {
         fieldsNames.put("themeList4","Non-life insurance;");
         fieldsNames.put("themeList5","loans and leasing;");
         fieldsNames.put("themeList6","The daily financial management.");
+        fieldsNames.put("historyButtonDelete2", "Delete");
 
         // HISTORY
 

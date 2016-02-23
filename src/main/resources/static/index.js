@@ -102,8 +102,8 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'ngMessages']);
                             $location.path('/home');
                         }}, function errorCallback(response)
                         {
-                            $location.path('/');
                             alert("Error");
+                            $location.path('/');
                         }
                     );
                 }
@@ -238,7 +238,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'ngMessages']);
 
             $scope.view = function(ID) {
                 $http.get('/api/history/view/' + userID + "/" + ID);
-                $location.url('http://swedbank-us1bteam.rhcloud.com/api/history/view/' + userID + "/" + ID);
+                $location.url('api/history/view/' + userID + "/" + ID);
             };
 
             $scope.fetch = function() {
