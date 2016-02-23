@@ -108,7 +108,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
             }]);
 
-        demoApp.controller('languages',['$cookies', '$scope', '$http', '$rootScope', '$templateCache',function($cookies, $scope, $http, $rootScope, $templateCache) {
+        demoApp.controller('languages',['$location', '$cookies', '$scope', '$http', '$rootScope', '$templateCache',function($location, $cookies, $scope, $http, $rootScope, $templateCache) {
 
             $scope.ltLanguage = function() {
                 $scope.code = null;
