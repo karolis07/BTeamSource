@@ -91,6 +91,13 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                         $rootScope.userID = $scope.data;
                     });
 
+                    $scope.ltLanguage = function() {
+                        document.cookie = "lt";
+                    };
+                    $scope.enLanguage = function() {
+                        document.cookie = "en";
+                    };
+
                     if($rootScope.userID != '-1')
                     {
                         $rootScope.loggedIn = true;
@@ -116,10 +123,10 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                 $scope.response = null;
                 $scope.bla = $rootScope;
 
-                if (document.cookie = "en") {
-                    $scope.url = "/en";
-                } else {
+                if (document.cookie = "lt") {
                     $scope.url = "/lt";
+                } else {
+                    $scope.url = "/en";
                 }
 
                 $scope.a = function(){
@@ -140,12 +147,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
         }]);
 
         demoApp.controller('changeLanguage', function($scope) {
-            $scope.ltLanguage = function() {
-                document.cookie = "";
-            };
-            $scope.enLanguage = function() {
-                document.cookie = "en";
-            }
+
         });
 
         demoApp.directive('datepicker', function() {
