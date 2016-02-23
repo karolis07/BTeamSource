@@ -232,7 +232,12 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             var ID = null;
 
             $scope.delete = function(ID) {
-                $http.delete('/api/history/delete/' + userID + "/" + ID);
+                $http.get('/api/history/delete/' + userID + "/" + ID);
+                $location.url('/history');
+            };
+
+            $scope.view = function(ID) {
+                $http.get('/api/history/view/' + userID + "/" + ID);
                 $location.url('/history');
             };
 

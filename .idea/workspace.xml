@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="539356fd-58ad-4620-b9b1-365d30102ae1" name="Default" comment="">
+    <list default="true" id="539356fd-58ad-4620-b9b1-365d30102ae1" name="Default" comment="History check">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Services/NewService.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Services/NewService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/index.js" afterPath="$PROJECT_DIR$/src/main/resources/static/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/pages/history.html" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/history.html" />
     </list>
@@ -43,11 +44,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74876845">
-              <caret line="246" column="59" selection-start-line="246" selection-start-column="59" selection-end-line="246" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="236" column="14" selection-start-line="236" selection-start-column="14" selection-end-line="236" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -95,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NewService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Services/NewService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="147" column="93" selection-start-line="147" selection-start-column="93" selection-end-line="147" selection-end-column="93" />
+            <state vertical-scroll-proportion="0.49753696">
+              <caret line="169" column="5" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,8 +121,8 @@
       <file leaf-file-name="history.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/pages/history.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.076923">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state vertical-scroll-proportion="-16.461538">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -630,9 +631,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/pages/home.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/Config/Language.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/pages/login.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/Services/NewService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/pages/history.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/index.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/pages/history.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/Services/NewService.java" />
       </list>
     </option>
   </component>
@@ -1304,13 +1305,7 @@
       <workItem from="1456132038689" duration="1243000" />
       <workItem from="1456133342919" duration="8727000" />
       <workItem from="1456142150064" duration="1404000" />
-      <workItem from="1456222478703" duration="3398000" />
-    </task>
-    <task id="LOCAL-00082" summary="try register">
-      <created>1456065600587</created>
-      <option name="number" value="00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1456065600587</updated>
+      <workItem from="1456222478703" duration="3502000" />
     </task>
     <task id="LOCAL-00083" summary="try register">
       <created>1456065818590</created>
@@ -1600,11 +1595,17 @@
       <option name="project" value="LOCAL" />
       <updated>1456225319083</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="History check">
+      <created>1456225891001</created>
+      <option name="number" value="00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1456225891001</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16959000" />
+    <option name="totallyTimeSpent" value="17063000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-356" y="-1208" width="1936" height="1176" extended-state="6" />
@@ -2009,16 +2010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Services/NewService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="147" column="93" selection-start-line="147" selection-start-column="93" selection-end-line="147" selection-end-column="93" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Config/HistoryRegistrations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59802955">
@@ -2040,17 +2031,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/pages/history.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.076923">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state vertical-scroll-proportion="-16.461538">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74876845">
-          <caret line="246" column="59" selection-start-line="246" selection-start-column="59" selection-end-line="246" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="236" column="14" selection-start-line="236" selection-start-column="14" selection-end-line="236" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Services/NewService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49753696">
+          <caret line="169" column="5" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
