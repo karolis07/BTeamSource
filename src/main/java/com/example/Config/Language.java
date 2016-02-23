@@ -46,6 +46,14 @@ public class Language {
 
         fieldsNames.put("contactError","Užpildykite privalomus laukus");
 
+        //CONTACT ERRORS
+
+        fieldsNames.put("themeError","Privalote pasirinkti temą");
+        fieldsNames.put("messageError","Šiame lauke privalote parašyti žinutę");
+        fieldsNames.put("nameError","Prašome nurodyti savo vardą");
+        fieldsNames.put("phoneError", "Prašome nurodyti savo telefono numerį");
+        fieldsNames.put("emailError", "Prašome nurodyti savo el. pašto adresą");
+
         // CONTACT CONFIRMATION
 
         fieldsNames.put("contactConfirmText","Sveiki,\n" +
@@ -98,6 +106,9 @@ public class Language {
         fieldsNames.put("buttonSend","Siųsti");
         fieldsNames.put("buttonBack","< Atgal");
         fieldsNames.put("logout", "Atsijungti");
+        fieldsNames.put("noData", "Nėra rezultatų...");
+        fieldsNames.put("search", "Filtravimas...");
+        fieldsNames.put("historyButtonDelete2", "Ištrinti");
         return fieldsNames;
     }
 
@@ -143,6 +154,14 @@ public class Language {
 
         fieldsNames.put("contactError","Fill in the required fields");
 
+        //CONTACT ERRORS
+
+        fieldsNames.put("themeError","You must choose a subject");
+        fieldsNames.put("messageError","You must write a message in this field");
+        fieldsNames.put("nameError","Please provide Your name");
+        fieldsNames.put("phoneError", "Please provide Your phone number");
+        fieldsNames.put("emailError", "Please provide Your email address");
+
         // CONTACT CONFIRMATION
 
         fieldsNames.put("contactConfirmText","Welcome,\n" +
@@ -183,6 +202,7 @@ public class Language {
         fieldsNames.put("themeList4","Non-life insurance;");
         fieldsNames.put("themeList5","loans and leasing;");
         fieldsNames.put("themeList6","The daily financial management.");
+        fieldsNames.put("historyButtonDelete2", "Delete");
 
         // HISTORY
 
@@ -193,6 +213,8 @@ public class Language {
         // MISC
         fieldsNames.put("buttonSend","Send");
         fieldsNames.put("buttonBack","< Back");
+        fieldsNames.put("noData", "No results found...");
+        fieldsNames.put("search", "Filter...");
 
         return fieldsNames;
     }

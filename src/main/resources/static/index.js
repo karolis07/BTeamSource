@@ -1,4 +1,4 @@
-var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
+var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'ngMessages']);
 
     demoApp.config(function($routeProvider){
         $routeProvider
@@ -53,6 +53,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                                                 }
                                             }
                                         },
+                controller: 'historyController',
                  templateUrl: 'pages/history.html'
             })
             .when('/home',
@@ -97,11 +98,12 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                         {
                             $rootScope.userID = response.data;
                             $cookies.put('login', 'true');
+                            $cookies.put('userID', response.data);
                             $location.path('/home');
                         }}, function errorCallback(response)
                         {
-                            $location.path('/');
                             alert("Error");
+                            $location.path('/');
                         }
                     );
                 }
@@ -132,6 +134,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
             $scope.logout = function(){
                 $cookies.remove('login');
+                $cookies.remove('userID');
                 $location.path('/');
             };
 
@@ -223,27 +226,35 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
         });
 
-        demoApp.controller('historyController',['$scope', '$http', '$templateCache',function($scope, $http, $templateCache) {
+        demoApp.controller('historyController',['$location', '$cookies', '$scope', '$rootScope', '$http', '$templateCache',function($location, $cookies, $scope, $rootScope, $http, $templateCache) {
 
-            $scope.delete = function() {
-                $http.delete('/del/' + $scope.data.userID + '/' + $scope.checkbox);
+            var userID = $cookies.get('userID');
+            var ID = null;
+
+            $scope.delete = function(ID) {
+                $http.get('/api/history/delete/' + userID + "/" + ID);
                 $location.url('/history');
-            }
+            };
+
+            $scope.view = function(ID) {
+                $http.get('/api/history/view/' + userID + "/" + ID);
+                $location.url('api/history/view/' + userID + "/" + ID);
+            };
 
             $scope.fetch = function() {
-            $scope.code = null;
-            $scope.response = null;
-            $scope.url = "/api/history/getall";
+                $scope.code = null;
+                $scope.response = null;
+                $scope.url = "/api/history/getall/" + userID;
 
-            $http({method: 'GET', url: $scope.url, cache: $templateCache}).
-              then(function(response) {
-                $scope.status = response.status;
-                $scope.data = response.data;
-              }, function(response) {
-                $scope.data = response.data || "Request failed";
-                $scope.status = response.status;
-            });
-          };
+                $http({method: 'GET', url: $scope.url, cache: $templateCache}).
+                  then(function(response) {
+                    $scope.statusHistory = response.status;
+                    $rootScope.dataHistory = response.data;
+                  }, function(response) {
+                    $scope.dataHistory = response.data || "Request failed";
+                    $rootScope.statusHistory = response.status;
+                });
+            };
         }]);
 
 

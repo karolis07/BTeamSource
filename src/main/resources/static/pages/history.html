@@ -3,38 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>History</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
-    <script src="http://localhost:63342/MAIN/static/angular.js"></script>
-    <script src="http://localhost:63342/MAIN/static/index.js"></script>
-    <script src="http://localhost:63342/MAIN/static/angular-route.js"></script>
-    <script src="http://localhost:63342/MAIN/static/pages/history.html"></script>
-    <script src="angular-cookies.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="extra/style.css">
-
 </head>
 <body class="container">
-    <h1>Esamos registracijos 3</h1>
-
-
-<div ng-controller="historyController" ng-init="fetch()">
-    <pre>http status code: {{status}}</pre>
-    <pre>http response data: {{data[0].registrationDate}}</pre>
-
+    <h1>{{ data.homeButtonHistory }}</h1>
+<div>
 
     <div class="row">
         <div class="col-xs-12">
             <table class="table table-hover">
                 <thead>
                 <tr>
+                    <th>{{ data.registrationDate }}</th>
+                    <th>{{ data.registrationTime }}</th>
+                    <th>{{ data.registrationBankDepartment }}</th>
+                    <th>{{ data.theme }}</th>
                     <th></th>
-                    <th>Data</th>
-                    <th>Laikas</th>
-                    <th>Banko skyrius</th>
-                    <th>Tema</th>
                 </tr>
                 </thead>
 
@@ -42,36 +25,40 @@
 
 
                 <div ng-controller="historyController" ng-init="fetch()">
-                <tr>
 
-                    <td onClick="" data-title="'Check">
-                        <input type="checkbox" value="checkbox" ng-model="{{data[0].registrationID}}" />
+                <tr ng-repeat="dataHistory in dataHistory | filter:q as results">
+                    <td data-title="Data">
+                        {{ dataHistory.registrationDate }}
                     </td>
 
-                    <td onClick="document.location.href = 'www.google.com';"  data-title="'Data'" ng-controller="historyController" ng-init="fetch()">
-                        {{data[0].registrationDate}}
+                    <td data-title="Laikas">
+                        <p>{{ dataHistory.registrationTime }}</p>
                     </td>
 
-                    <td onClick="document.location.href = 'www.google.com';"  data-title="'Laikas'">
-                        <p>{{data[0].registrationTime}}</p>
+                    <td data-title="Banko skyrius">
+                        <p>{{ dataHistory.bankDepartment }}</p>
                     </td>
 
-                    <td onClick="document.location.href = 'www.google.com';"  data-title="'Banko skyrius'">
-                        <p>{{data[0].bankDepartment}}</p>
+                    <td  data-title="Tema">
+                        <p>{{ dataHistory.dropDownList }}</p>
                     </td>
 
-                    <td onClick="document.location.href = 'www.google.com';"  data-title="'Tema'">
-                        <p>{{data[0].dropDownList}}</p>
+                    <td>
+                        <button type="button" ng-click="view( dataHistory.registrationID )">{{ data.historyButtonLook }}</button>
+                        <button type="button" ng-click="delete( dataHistory.registrationID )">{{ data.historyButtonDelete2 }}</button>
                     </td>
-
                 </tr>
+
+                <tr>
+                        <td ng-if="dataHistory.length == 0">
+                            <strong>{{ data.noData }}</strong>
+                        </td>
+                </tr>
+
                 </div>
 
                 </tbody>
             </table>
-
-            <button type="button" ng-click="delete()" class="btn btn-primary btn-block btn-lg">Pasalinti</button>
-
 
         </div>
     </div>

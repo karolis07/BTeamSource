@@ -170,7 +170,7 @@ public class NewService {
     }
 
     // DELETE SPECIFIC REGISTRATION
-    @RequestMapping(value = "/api/history/delete/{UserID}/{RegistrationID}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/api/history/delete/{UserID}/{RegistrationID}", method = RequestMethod.GET)
     public void deleteHistoryTableElement(@PathVariable String UserID,@PathVariable String RegistrationID)
     {
         MySQLConfig mySQLConfig = new MySQLConfig();
