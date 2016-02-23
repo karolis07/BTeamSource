@@ -106,7 +106,7 @@ public class Language {
         fieldsNames = new HashMap<String, String>();
 
         // LOGIN
-        fieldsNames.put("titleOne","IT Akademy Bank");
+        fieldsNames.put("titleOne","IT Academy Bank");
         fieldsNames.put("titleTwo","Financial consults");
         fieldsNames.put("select", "Select");
 
