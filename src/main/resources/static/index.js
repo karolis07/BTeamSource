@@ -38,7 +38,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                             $location.path('/');
                         }
                     }
-                },
+                }, // pagal ideja galima ji iskelt pries visus routes
                 templateUrl: 'pages/home.html'
 
             })
@@ -64,15 +64,60 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
         }]);
 
 
-        demoApp.controller('loginController', ['$scope', '$location', '$rootScope',
-         function($scope, $location, $rootScope){
+
+//var email = $( "#emailField" ).val();
+//    var password = $( "#passwordField" ).val();
+//    $http({
+//        method: 'POST',
+//                url: $rootScope.url+'/authenticate',
+//                data: { "email": email, "pass": password }
+//    }).then(function successCallback(response) {
+//        if(response.data != "")
+//        {
+//        $rootScope.user = response.data;
+//        $window.location.href = '/#/home';
+//        }else
+//        {
+//        $("#wrongPassword").show();
+//        setTimeout(function(){ $("#wrongPassword").hide(); }, 3000);
+//        }
+//        }, function errorCallback(response) {
+//        alert("Problemos su interneto ryšiu");
+//        });
+
+        demoApp.controller('loginController', ['$scope', '$location', '$rootScope', '$templateCache', '$http',
+         function($scope, $location, $rootScope, $templateCache, $http){
             $scope.submit = function() {
+                $scope.code = null;
+                $scope.response = null;
+                $scope.url = "/api/authenticate";
 
-                if($scope.email == 'admin@admin.lt' && $scope.password == 'admin'){
+                $http({method: 'POST', url: $scope.url, data: {"email": $scope.email, "password": $scope.password}}).
+                                then(function successCallback(response) {
+                                    if(response.data != "-1")
+                                    {
+                                        $rootScope.userID = response.data;
+                                        $location.path('/home');
+                                    }. function errorCallback(response)
+                                    {
+                                        alert("Error");
+                                    }
+                                    })
 
-                    $rootScope.loggedIn = true;
-                    $location.path('/home');
-                }
+//                if($rootScope.userID != '-1')
+//                {
+//                    $rootScope.loggedIn = true;
+//                }
+//                else
+//                {
+//                    $rootScope.loggedIn = false;
+//                }
+
+//                if($scope.email == 'admin@admin.lt' && $scope.password == 'admin'){
+//
+//                    $rootScope.loggedIn = true;
+//                    $location.path('/home');
+//                }
             }
 
         }]);
