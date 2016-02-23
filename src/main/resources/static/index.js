@@ -132,6 +132,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
             $scope.logout = function(){
                 $cookies.remove('login');
+                $location.path('/');
             };
 
             $scope.enLanguage = function() {
