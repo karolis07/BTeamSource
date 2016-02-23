@@ -83,17 +83,17 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                 $scope.response = null;
                 $scope.url = "/api/authenticate";
 
-                $http({method: 'POST', url: $scope.url, data: {"email": $scope.email, "password": $scope.password}}).
+                $http({method: 'POST', url: $scope.url, data: {"email": $scope.email.val(), "password": $scope.password}}).
                                 then(function successCallback(response) {
                                     if(response.data != "-1")
                                     {
                                         $rootScope.userID = response.data;
                                         $location.path('/home');
-                                    }. function errorCallback(response)
+                                    }}. function errorCallback(response)
                                     {
                                         alert("Error");
                                     }
-                                    })
+                                    )
 
 //                if($rootScope.userID != '-1')
 //                {
