@@ -29,8 +29,9 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             .when('/home',
             {
                 resolve: {
-                    "check": function($location, $rootScope) {
-                        if(!$rootScope.loggedIn){
+                    "check": function($location, $cookies) {
+                    var login = cookies.get('login');
+                        if(login == null){
                             $location.path('/');
                         }
                     }
@@ -113,8 +114,8 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
         }]);*/
 
-        demoApp.controller('loginController', ['$scope', '$location', '$rootScope', '$templateCache', '$http',
-            function($scope, $location, $rootScope, $templateCache, $http){
+        demoApp.controller('loginController', ['$cookies', '$scope', '$location', '$rootScope', '$templateCache', '$http',
+            function($cookies, $scope, $location, $rootScope, $templateCache, $http){
                 $scope.submit = function() {
                     $scope.code = null;
                     $scope.response = null;
@@ -125,6 +126,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                         if(response.data != "-1")
                         {
                             $rootScope.userID = response.data;
+                            $cookies.put('login', 'true');
                             $location.path('/home');
                         }}, function errorCallback(response)
                         {
