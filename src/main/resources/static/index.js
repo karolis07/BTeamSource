@@ -53,6 +53,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                                                 }
                                             }
                                         },
+                controller: 'historyController',
                  templateUrl: 'pages/history.html'
             })
             .when('/home',
@@ -97,6 +98,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                         {
                             $rootScope.userID = response.data;
                             $cookies.put('login', 'true');
+                            $cookies.put('userID', response.data);
                             $location.path('/home');
                         }}, function errorCallback(response)
                         {
@@ -132,6 +134,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
             $scope.logout = function(){
                 $cookies.remove('login');
+                $cookies.remove('userID');
                 $location.path('/');
             };
 
@@ -223,27 +226,29 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
         });
 
-        demoApp.controller('historyController',['$scope', '$http', '$templateCache',function($scope, $http, $templateCache) {
+        demoApp.controller('historyController',['$cookies', '$scope', '$rootScope', '$http', '$templateCache',function($cookies, $scope, $rootScope, $http, $templateCache) {
+
+            var userID = $cookies.get('userID');
 
             $scope.delete = function() {
                 $http.delete('/del/' + $scope.data.userID + '/' + $scope.checkbox);
                 $location.url('/history');
-            }
+            };
 
             $scope.fetch = function() {
-            $scope.code = null;
-            $scope.response = null;
-            $scope.url = "/api/history/getall";
+                $scope.code = null;
+                $scope.response = null;
+                $scope.url = "/api/history/getall" + userID;
 
-            $http({method: 'GET', url: $scope.url, cache: $templateCache}).
-              then(function(response) {
-                $scope.status = response.status;
-                $scope.data = response.data;
-              }, function(response) {
-                $scope.data = response.data || "Request failed";
-                $scope.status = response.status;
-            });
-          };
+                $http({method: 'GET', url: $scope.url, cache: $templateCache}).
+                  then(function(response) {
+                    $scope.statusHistory = response.status;
+                    $scope.dataHistory = response.data;
+                  }, function(response) {
+                    $scope.dataHistory = response.data || "Request failed";
+                    $scope.statusHistory = response.status;
+                });
+            };
         }]);
 
 

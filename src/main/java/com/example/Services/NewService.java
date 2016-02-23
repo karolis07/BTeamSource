@@ -142,14 +142,14 @@ public class NewService {
 //    }
 
     // GET HISTORY TABLE FOR SPECIFIC USER
-    @RequestMapping(value = "/api/history/getall", method = RequestMethod.GET)
-    public ArrayList<HistoryRegistrations> getHistoryTable()
+    @RequestMapping(value = "/api/history/getall/{userID}", method = RequestMethod.GET)
+    public ArrayList<HistoryRegistrations> getHistoryTable(@PathVariable String userID)
     {
         ArrayList<HistoryRegistrations> historyTable = new ArrayList<HistoryRegistrations>();
         MySQLConfig mySQLConfig = new MySQLConfig();
         mySQLConfig.connect();
 
-        historyTable = mySQLConfig.getHistoryTable(1);
+        historyTable = mySQLConfig.getHistoryTable(Integer.parseInt(userID));
         mySQLConfig.closeConnection();
 
         return historyTable;

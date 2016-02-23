@@ -21,8 +21,8 @@
 
 
 <div ng-controller="historyController" ng-init="fetch()">
-    <pre>http status code: {{status}}</pre>
-    <pre>http response data: {{data[0].registrationDate}}</pre>
+    <pre>http status code: {{statusHistory}}</pre>
+    <pre>http response data: {{dataHistory[0].registrationDate}}</pre>
 
 
     <div class="row">
@@ -31,10 +31,10 @@
                 <thead>
                 <tr>
                     <th></th>
-                    <th>Data</th>
-                    <th>Laikas</th>
-                    <th>Banko skyrius</th>
-                    <th>Tema</th>
+                    <th>{{ data.registrationDate }}</th>
+                    <th>{{ data.registrationTime }}</th>
+                    <th>{{ data.registrationBankDepartment }}</th>
+                    <th>{{ data.theme }}</th>
                 </tr>
                 </thead>
 
@@ -49,7 +49,7 @@
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Data'" ng-controller="historyController" ng-init="fetch()">
-                        {{data[0].registrationDate}}
+                        {{dataHistory[0].registrationDate}}
                     </td>
 
                     <td onClick="document.location.href = 'www.google.com';"  data-title="'Laikas'">
