@@ -25,28 +25,37 @@
 
 
                 <div>
-                <tr ng-controller="historyController" ng-init="fetch()">
+                    <input type="search" ng-model="q" placeholder="filter friends..." aria-label="filter friends" />
+
+                <tr ng-controller="historyController" ng-init="fetch()" ng-repeat="dataHistory in dataHistory | filter:q as results">
                     <td data-title="Data">
-                        {{ dataHistory[0].registrationDate }}
+                        {{ dataHistory.registrationDate }}
                     </td>
 
                     <td data-title="Laikas">
-                        <p>{{ dataHistory[0].registrationTime }}</p>
+                        <p>{{ dataHistory.registrationTime }}</p>
                     </td>
 
                     <td data-title="Banko skyrius">
-                        <p>{{ dataHistory[0].bankDepartment }}</p>
+                        <p>{{ dataHistory.bankDepartment }}</p>
                     </td>
 
                     <td  data-title="Tema">
-                        <p>{{ dataHistory[0].dropDownList }}</p>
+                        <p>{{ dataHistory.dropDownList }}</p>
                     </td>
 
                     <td>
-                        <button type="button" ng-click="view( dataHistory[0].registrationID )" class="btn btn-primary btn-block btn-lg">Perziureti</button>
-                        <button type="button" ng-click="delete( dataHistory[0].registrationID )" class="btn btn-primary btn-block btn-lg">Pasalinti</button>
+                        <button type="button" ng-click="view( dataHistory.registrationID )" class="btn btn-primary btn-block btn-lg">Perziureti</button>
+                        <button type="button" ng-click="delete( dataHistory.registrationID )" class="btn btn-primary btn-block btn-lg">Pasalinti</button>
                     </td>
                 </tr>
+
+                <tr>
+                        <td ng-if="dataHistory.length == 0">
+                            <strong>No results found...</strong>
+                        </td>
+                </tr>
+
                 </div>
 
                 </tbody>

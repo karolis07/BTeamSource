@@ -1,4 +1,4 @@
-var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'ngMessages']);
+var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'ngMessages', 'ngRepeat']);
 
     demoApp.config(function($routeProvider){
         $routeProvider
