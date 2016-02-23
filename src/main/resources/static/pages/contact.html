@@ -30,8 +30,8 @@
         <div class="container">
             <div ng-controller="contactController" class="row" style="margin-left: 30%;">
                 <form role="form" name="contactForm" novalidate>
-                    <div ng-messages="contactForm.$submitted && (contactForm.InputMessage.$error|| contactForm.first_name.$error || contactForm.phone_number.$error|| contactForm.email.$error || contactForm.theme.$error)"  role="alert">
-                        <div style="color:red" ng-message="required"> Užpildykite privalomus laukus *</div>
+                    <div ng-show="contactForm.$submitted && (contactForm.InputMessage.$error|| contactForm.first_name.$error || contactForm.phone_number.$error|| contactForm.email.$error || contactForm.theme.$error)"  role="alert">
+                        <div style="color:red" ng-message="required"> {{errorMessage}}</div>
                     </div>
                     <div class="col-lg-6">
 
