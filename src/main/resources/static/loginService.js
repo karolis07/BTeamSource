@@ -1,5 +1,5 @@
 'use strict';
-demoApp.factory('loginService',function($http, $location, sessionService){
+demoApp.factory('loginService',function($http, $location){
 	return{
 		login:function(data,scope){
 			var $promise=$http.post('/api/authenticate/'+data); //send data to api/authenticate
@@ -7,7 +7,6 @@ demoApp.factory('loginService',function($http, $location, sessionService){
 				var uid=msg.data;
 				if(uid){
 					//scope.msgtxt='Correct information';
-					sessionService.set('uid',uid);
 					$location.path('/home');
 				}
 				else  {
