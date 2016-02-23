@@ -3,9 +3,6 @@
 DEL USER ID SAUGOJIMO IR PERDAVIMO NAUDOTI $ROOTSCOPE.USERID
 
 */
-
-document.cookie = "";
-
 var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
     demoApp.config(function($routeProvider){
@@ -27,7 +24,6 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             })
             .when('/history',
             {
-                 controller: 'historyController',
                  templateUrl: 'pages/history.html'
             })
             .when('/home',
@@ -83,8 +79,13 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             $scope.fetch = function() {
                 $scope.code = null;
                 $scope.response = null;
-                $scope.url = "/en";
                 $scope.bla = $rootScope;
+
+                if (document.cookie = "en") {
+                    $scope.url = "/en";
+                } else {
+                    $scope.url = "/lt";
+                }
 
                 $scope.a = function(){
                     $scope.data = $rootScope.data;
@@ -103,7 +104,14 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             };
         }]);
 
-
+        demoApp.controller('changeLanguage', function($scope) {
+            $scope.ltLanguage = function() {
+                document.cookie = "";
+            };
+            $scope.enLanguage = function() {
+                document.cookie = "en";
+            }
+        });
 
         demoApp.directive('datepicker', function() {
                     return {
@@ -163,8 +171,9 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             $scope.fetch = function() {
             $scope.code = null;
             $scope.response = null;
+            $scope.url = "pages/data.html";
 
-            $http({method: 'GET', url: '/api/history/getall', cache: $templateCache}).
+            $http({method: 'GET', url: $scope.url, cache: $templateCache}).
               then(function(response) {
                 $scope.status = response.status;
                 $scope.data = response.data;
