@@ -58,7 +58,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             document.cookie = "someCookieName=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
             $scope.cookies = document.cookie;
         }]);
-
+/*
 
         demoApp.controller('loginController', ['$scope', '$location', '$rootScope',
          function($scope, $location, $rootScope){
@@ -71,8 +71,43 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                 }
             }
 
-        }]);
+        }]);*/
 
+        demoApp.controller('loginController', ['$scope', '$location', '$rootScope', '$templateCache', '$http',
+            function($scope, $location, $rootScope, $templateCache, $http){
+                $scope.submit = function() {
+                    $scope.code = null;
+                    $scope.response = null;
+                    $scope.url = "/api/authenticate"+"/"+$scope.email+"/"+$scope.password;
+
+                    $http({method: 'GET', url: $scope.url, cache: $templateCache}).
+                    then(function(response) {
+                        $scope.status = response.status;
+                        $scope.data = response.data;
+                        $rootScope.userID = $scope.data;
+                    }, function(response) {
+                        $scope.data = response.data || "Request failed";
+                        $scope.status = response.status;
+                        $rootScope.userID = $scope.data;
+                    });
+
+                    if($rootScope.userID != '-1')
+                    {
+                        $rootScope.loggedIn = true;
+                    }
+                    else
+                    {
+                        $rootScope.loggedIn = false;
+                    }
+
+        //                if($scope.email == 'admin@admin.lt' && $scope.password == 'admin'){
+        //
+        //                    $rootScope.loggedIn = true;
+        //                    $location.path('/home');
+        //                }
+                }
+
+            }]);
 
         demoApp.controller('languages',['$scope', '$http', '$rootScope', '$templateCache',function($scope, $http, $rootScope, $templateCache) {
 
@@ -171,7 +206,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             $scope.fetch = function() {
             $scope.code = null;
             $scope.response = null;
-            $scope.url = "pages/data.html";
+            $scope.url = "/api/history/getall";
 
             $http({method: 'GET', url: $scope.url, cache: $templateCache}).
               then(function(response) {

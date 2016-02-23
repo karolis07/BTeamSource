@@ -48,7 +48,7 @@
                         <input type="checkbox" value="checkbox" ng-model="{{data[0].registrationID}}" />
                     </td>
 
-                    <td onClick="document.location.href = 'www.google.com';"  data-title="'Data'">
+                    <td onClick="document.location.href = 'www.google.com';"  data-title="'Data'" ng-controller="historyController" ng-init="fetch()">
                         {{data[0].registrationDate}}
                     </td>
 
