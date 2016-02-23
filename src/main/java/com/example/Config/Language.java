@@ -46,6 +46,14 @@ public class Language {
 
         fieldsNames.put("contactError","Užpildykite privalomus laukus");
 
+        //CONTACT ERRORS
+
+        fieldsNames.put("themeError","Privalote pasirinkti temą");
+        fieldsNames.put("messageError","Šiame lauke privalote parašyti žinutę");
+        fieldsNames.put("nameError","Prašome nurodyti savo vardą");
+        fieldsNames.put("phoneError", "Prašome nurodyti savo telefono numerį");
+        fieldsNames.put("emailError", "Prašome nurodyti savo el. pašto adresą");
+
         // CONTACT CONFIRMATION
 
         fieldsNames.put("contactConfirmText","Sveiki,\n" +
@@ -142,6 +150,14 @@ public class Language {
                 "+370 5 268 4444 ( For residential customers ) and +370 5 268 4422 (business customers). ");
 
         fieldsNames.put("contactError","Fill in the required fields");
+
+        //CONTACT ERRORS
+
+        fieldsNames.put("themeError","You must choose a subject");
+        fieldsNames.put("messageError","You must write a message in this field");
+        fieldsNames.put("nameError","Please provide Your name");
+        fieldsNames.put("phoneError", "Please provide Your phone number");
+        fieldsNames.put("emailError", "Please provide Your email address");
 
         // CONTACT CONFIRMATION
 
