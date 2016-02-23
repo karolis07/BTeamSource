@@ -238,7 +238,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             $scope.fetch = function() {
                 $scope.code = null;
                 $scope.response = null;
-                $scope.url = "/api/history/getall" + userID;
+                $scope.url = "/api/history/getall/" + userID;
 
                 $http({method: 'GET', url: $scope.url, cache: $templateCache}).
                   then(function(response) {
