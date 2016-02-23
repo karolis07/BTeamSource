@@ -3,14 +3,16 @@ package com.example.Services;
 import com.example.Config.HistoryRegistrations;
 import com.example.Config.Language;
 import com.example.Config.MySQLConfig;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import com.example.Config.User;
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -122,23 +124,23 @@ public class NewService {
 //        return uid;
 //    }
 
-//    @RequestMapping(value = "/api/authenticate/{email}/{password}", method = RequestMethod.GET)
-//    public int doSmth(@PathVariable String email, @PathVariable String password)
-//    {
-//        int userID;
-//        String uid = "";
-//        MySQLConfig mySQLConfig = new MySQLConfig();
-//        mySQLConfig.connect();
-//
-////        email="admin@admin.lt";
-////        password="admin";
-//
-//        userID = mySQLConfig.getLogin(email,password);
-//        mySQLConfig.closeConnection();
-//
-//
-//        return userID;
-//    }
+    @RequestMapping(value = "/api/authenticate/{email}/{password}", method = RequestMethod.GET)
+    public int doSmth(@PathVariable String email, @PathVariable String password)
+    {
+        int userID;
+        String uid = "";
+        MySQLConfig mySQLConfig = new MySQLConfig();
+        mySQLConfig.connect();
+
+//        email="admin@admin.lt";
+//        password="admin";
+
+        userID = mySQLConfig.getLogin(email,password);
+        mySQLConfig.closeConnection();
+
+
+        return userID;
+    }
 
     // GET HISTORY TABLE FOR SPECIFIC USER
     @RequestMapping(value = "/api/history/getall", method = RequestMethod.GET)
@@ -179,70 +181,4 @@ public class NewService {
         mySQLConfig.closeConnection();
     }
 
-    //LOGIN
-    @RequestMapping(value = "/api/authenticate", method = RequestMethod.POST)
-    public String authenticate(@RequestBody final User person, HttpServletRequest request) {
-        String UserID = new String();
-        int temp = -1;
-
-        MySQLConfig mySQLConfig = new MySQLConfig();
-        mySQLConfig.connect();
-
-//        email="admin@admin.lt";
-//        password="admin";
-
-        temp = mySQLConfig.getLogin(person.getEmail(),person.getPassword());
-        mySQLConfig.closeConnection();
-        UserID = Integer.toString(temp);
-
-        return UserID;
-    }
-
-
 }
-
-
-
-//    var email = $( "#emailField" ).val();
-//    var password = $( "#passwordField" ).val();
-//    $http({
-//        method: 'POST',
-//                url: $rootScope.url+'/authenticate',
-//                data: { "email": email, "pass": password }
-//    }).then(function successCallback(response) {
-//        if(response.data != "")
-//        {
-//        $rootScope.user = response.data;
-//        $window.location.href = '/#/home';
-//        }else
-//        {
-//        $("#wrongPassword").show();
-//        setTimeout(function(){ $("#wrongPassword").hide(); }, 3000);
-//        }
-//        }, function errorCallback(response) {
-//        alert("Problemos su interneto ryšiu");
-//        });
-
-//    @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-//    public String authenticate(@RequestBody final User person, HttpServletRequest request) {
-
-//public class User  implements Serializable {
-//    private String email;
-//    private String pass;
-//
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
-//
-//    public String getPass() {
-//        return pass;
-//    }
-//
-//    public void setPass(String password) {
-//        this.pass = password;
-//    }
-//}

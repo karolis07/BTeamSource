@@ -3,9 +3,6 @@
 DEL USER ID SAUGOJIMO IR PERDAVIMO NAUDOTI $ROOTSCOPE.USERID
 
 */
-
-document.cookie = "";
-
 var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 
     demoApp.config(function($routeProvider){
@@ -27,7 +24,6 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             })
             .when('/history',
             {
-                 controller: 'historyController',
                  templateUrl: 'pages/history.html'
             })
             .when('/home',
@@ -57,12 +53,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                     $location.url('/home');
                 };
         });
-
-        demoApp.controller('cookieController', ['$scope', function($scope) {
-            document.cookie = "someCookieName=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
-            $scope.cookies = document.cookie;
-        }]);
-
+/*
 
 
 //var email = $( "#emailField" ).val();
@@ -120,20 +111,54 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
 //                }
             }
 
-        }]);
+        }]);*/
 
+        demoApp.controller('loginController', ['$scope', '$location', '$rootScope', '$templateCache', '$http',
+            function($scope, $location, $rootScope, $templateCache, $http){
+                $scope.submit = function() {
+                    $scope.code = null;
+                    $scope.response = null;
+                    $scope.url = "/api/authenticate";
 
-        demoApp.controller('languages',['$scope', '$http', '$rootScope', '$templateCache',function($scope, $http, $rootScope, $templateCache) {
+                    $http({method: 'POST', url: $scope.url, data: {"email": $scope.email, "password": $scope.password}}).
+                    then(function successCallback(response) {
+                        if(response.data != "-1")
+                        {
+                            $rootScope.userID = response.data;
+                            $location.path('/home');
+                        }}, function errorCallback(response)
+                        {
+                            alert("Error");
+                        }
+                    );
 
-            $scope.fetch = function() {
+        //                if($rootScope.userID != '-1')
+        //                {
+        //                    $rootScope.loggedIn = true;
+        //                }
+        //                else
+        //                {
+        //                    $rootScope.loggedIn = false;
+        //                }
+
+        //                if($scope.email == 'admin@admin.lt' && $scope.password == 'admin'){
+        //
+        //                    $rootScope.loggedIn = true;
+        //                    $location.path('/home');
+        //                }
+                }
+
+            }]);
+
+        demoApp.controller('languages',['$cookies', '$scope', '$http', '$rootScope', '$templateCache',function($cookies, $scope, $http, $rootScope, $templateCache) {
+
+            $scope.ltLanguage = function() {
                 $scope.code = null;
                 $scope.response = null;
-                $scope.url = "/en";
                 $scope.bla = $rootScope;
+                $scope.url = "/lt";
 
-                $scope.a = function(){
-                    $scope.data = $rootScope.data;
-                };
+                $cookies.put('language', 'lt');
 
                 $http({method: 'GET', url: $scope.url, cache: $templateCache}).
                 then(function(response) {
@@ -146,9 +171,58 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
                     $rootScope.data = $scope.data;
                 });
             };
+
+            $scope.enLanguage = function() {
+                $scope.code = null;
+                $scope.response = null;
+                $scope.bla = $rootScope;
+                $scope.url = "/en";
+
+                $cookies.put('language', 'en');
+
+                $http({method: 'GET', url: $scope.url, cache: $templateCache}).
+                then(function(response) {
+                    $scope.status = response.status;
+                    $scope.data = response.data;
+                    $rootScope.data = $scope.data;
+                }, function(response) {
+                    $scope.data = response.data || "Request failed";
+                    $scope.status = response.status;
+                    $rootScope.data = $scope.data;
+                });
+            };
+
+            $scope.fetch = function() {
+                var cookie = $cookies.get('language');
+
+                    $scope.code = null;
+                    $scope.response = null;
+                    $scope.bla = $rootScope;
+
+                    if ((cookie == null) || (cookie == "lt")) {
+                        $scope.url = "/lt";
+                        $cookies.put('language', 'lt');
+                    } else if (cookie == "en"){
+                        $scope.url = "/en";
+                        $cookies.put('language', 'en');
+                    }
+
+                    $http({method: 'GET', url: $scope.url, cache: $templateCache}).then(function (response) {
+                        $scope.status = response.status;
+                        $scope.data = response.data;
+                        $rootScope.data = $scope.data;
+                    }, function (response) {
+                        $scope.data = response.data || "Request failed";
+                        $scope.status = response.status;
+                        $rootScope.data = $scope.data;
+                    });
+
+            };
         }]);
 
+        demoApp.controller('changeLanguage', function($scope) {
 
+        });
 
         demoApp.directive('datepicker', function() {
                     return {
@@ -208,8 +282,9 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
             $scope.fetch = function() {
             $scope.code = null;
             $scope.response = null;
+            $scope.url = "/api/history/getall";
 
-            $http({method: 'GET', url: '/api/history/getall', cache: $templateCache}).
+            $http({method: 'GET', url: $scope.url, cache: $templateCache}).
               then(function(response) {
                 $scope.status = response.status;
                 $scope.data = response.data;
