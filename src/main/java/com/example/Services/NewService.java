@@ -3,11 +3,10 @@ package com.example.Services;
 import com.example.Config.HistoryRegistrations;
 import com.example.Config.Language;
 import com.example.Config.MySQLConfig;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import com.example.Config.User;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -124,23 +123,23 @@ public class NewService {
 //        return uid;
 //    }
 
-    @RequestMapping(value = "/api/authenticate/{email}/{password}", method = RequestMethod.GET)
-    public int doSmth(@PathVariable String email, @PathVariable String password)
-    {
-        int userID;
-        String uid = "";
-        MySQLConfig mySQLConfig = new MySQLConfig();
-        mySQLConfig.connect();
-
-//        email="admin@admin.lt";
-//        password="admin";
-
-        userID = mySQLConfig.getLogin(email,password);
-        mySQLConfig.closeConnection();
-
-
-        return userID;
-    }
+//    @RequestMapping(value = "/api/authenticate/{email}/{password}", method = RequestMethod.GET)
+//    public int doSmth(@PathVariable String email, @PathVariable String password)
+//    {
+//        int userID;
+//        String uid = "";
+//        MySQLConfig mySQLConfig = new MySQLConfig();
+//        mySQLConfig.connect();
+//
+////        email="admin@admin.lt";
+////        password="admin";
+//
+//        userID = mySQLConfig.getLogin(email,password);
+//        mySQLConfig.closeConnection();
+//
+//
+//        return userID;
+//    }
 
     // GET HISTORY TABLE FOR SPECIFIC USER
     @RequestMapping(value = "/api/history/getall", method = RequestMethod.GET)
@@ -179,6 +178,25 @@ public class NewService {
 
         mySQLConfig.deleteRegistration(Integer.parseInt(UserID),Integer.parseInt(RegistrationID));
         mySQLConfig.closeConnection();
+    }
+
+    //LOGIN
+    @RequestMapping(value = "/api/authenticate", method = RequestMethod.POST)
+    public String authenticate(@RequestBody final User person, HttpServletRequest request) {
+        String UserID;
+        int temp = -1;
+
+        MySQLConfig mySQLConfig = new MySQLConfig();
+        mySQLConfig.connect();
+
+//        email="admin@admin.lt";
+//        password="admin";
+
+        temp = mySQLConfig.getLogin(person.getEmail(),person.getPassword());
+        mySQLConfig.closeConnection();
+        UserID = Integer.toString(temp);
+
+        return UserID;
     }
 
 }
