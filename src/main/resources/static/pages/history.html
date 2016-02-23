@@ -20,14 +20,10 @@
     <h1>Esamos registracijos 3</h1>
 
 
-<div ng-controller="historyController" ng-init="fetch()">
+<div>
     <pre>http status code: {{ statusHistory }}</pre>
     <pre>http response data: {{ dataHistory.registrationDate[0] }}</pre>
     <pre>http response data: {{ dataHistory[0].registrationDate }}</pre>
-    <pre>http response data: {{ dataHistory.registrationDate }}</pre>
-    <pre>http response data: {{ dataHistory }}</pre>
-    <pre>http response data: {{ dataHistory[0] }}</pre>
-
 
     <div class="row">
         <div class="col-xs-12">
@@ -45,27 +41,27 @@
                 <tbody>
 
 
-                <div ng-controller="historyController" ng-init="fetch()">
-                <tr>
+                <div>
+                <tr ng-controller="historyController" ng-init="fetch()">
 
-                    <td onClick="" data-title="'Check">
+                    <td data-title="'Check">
                         <input type="checkbox" value="checkbox" ng-model="{{data[0].registrationID}}" />
                     </td>
 
-                    <td onClick="document.location.href = 'www.google.com';"  data-title="'Data'" ng-controller="historyController" ng-init="fetch()">
+                    <td data-title="'Data'">
                         {{dataHistory[0].registrationDate}}
                     </td>
 
-                    <td onClick="document.location.href = 'www.google.com';"  data-title="'Laikas'">
-                        <p>{{data[0].registrationTime}}</p>
+                    <td data-title="'Laikas'">
+                        <p>{{dataHistory[0].registrationTime}}</p>
                     </td>
 
-                    <td onClick="document.location.href = 'www.google.com';"  data-title="'Banko skyrius'">
-                        <p>{{data[0].bankDepartment}}</p>
+                    <td data-title="'Banko skyrius'">
+                        <p>{{dataHistory[0].bankDepartment}}</p>
                     </td>
 
-                    <td onClick="document.location.href = 'www.google.com';"  data-title="'Tema'">
-                        <p>{{data[0].dropDownList}}</p>
+                    <td  data-title="'Tema'">
+                        <p>{{dataHistory[0].dropDownList}}</p>
                     </td>
 
                 </tr>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="539356fd-58ad-4620-b9b1-365d30102ae1" name="Default" comment="">
+    <list default="true" id="539356fd-58ad-4620-b9b1-365d30102ae1" name="Default" comment="History check">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/pages/history.html" afterPath="$PROJECT_DIR$/src/main/resources/static/pages/history.html" />
     </list>
@@ -109,8 +109,8 @@
       <file leaf-file-name="history.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/pages/history.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29120323">
-              <caret line="26" column="69" selection-start-line="26" selection-start-column="69" selection-end-line="26" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.63498485">
+              <caret line="55" column="66" selection-start-line="55" selection-start-column="66" selection-end-line="55" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -1293,13 +1293,7 @@
       <workItem from="1456132038689" duration="1243000" />
       <workItem from="1456133342919" duration="8727000" />
       <workItem from="1456142150064" duration="1404000" />
-      <workItem from="1456222478703" duration="2129000" />
-    </task>
-    <task id="LOCAL-00079" summary="try register">
-      <created>1456064671365</created>
-      <option name="number" value="00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1456064671365</updated>
+      <workItem from="1456222478703" duration="2469000" />
     </task>
     <task id="LOCAL-00080" summary="try register">
       <created>1456065176857</created>
@@ -1589,11 +1583,17 @@
       <option name="project" value="LOCAL" />
       <updated>1456224321891</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="History check">
+      <created>1456224614704</created>
+      <option name="number" value="00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1456224614704</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15690000" />
+    <option name="totallyTimeSpent" value="16030000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-356" y="-1208" width="1936" height="1176" extended-state="6" />
@@ -2037,8 +2037,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/pages/history.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29120323">
-          <caret line="26" column="69" selection-start-line="26" selection-start-column="69" selection-end-line="26" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.63498485">
+          <caret line="55" column="66" selection-start-line="55" selection-start-column="66" selection-end-line="55" selection-end-column="66" />
           <folding />
         </state>
       </provider>
