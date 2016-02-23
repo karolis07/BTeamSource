@@ -236,8 +236,18 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'ngMessages']);
             };
 
             $scope.view = function(ID) {
-                $http.get('/api/history/view/' + userID + "/" + ID);
-                $location.url('api/history/view/' + userID + "/" + ID);
+                $scope.url('/api/history/view/' + userID + "/" + ID)
+                $scope.code = null;
+                $scope.response = null;
+
+                $http({method: 'GET', url: $scope.url, cache: $templateCache}).
+                then(function(response) {
+                    $scope.statusHistory = response.status;
+                    $rootScope.dataView = response.data;
+                }, function(response) {
+                    $scope.dataHistory = response.data || "Request failed";
+                    $rootScope.statusView = response.status;
+                });
             };
 
             $scope.fetch = function() {
