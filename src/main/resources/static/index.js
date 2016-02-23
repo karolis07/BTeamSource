@@ -64,8 +64,8 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies']);
         }]);
 
 
-        demoApp.controller('loginController', ['$scope', '$location', '$rootScope', '$http',
-         function($scope, $location, $rootScope, $http){
+        demoApp.controller('loginController', ['$scope', '$location', '$rootScope',
+         function($scope, $location, $rootScope){
             $scope.submit = function() {
 
                 if($scope.email == 'admin@admin.lt' && $scope.password == 'admin'){
