@@ -39,24 +39,6 @@ public class NewService {
         return language.fieldsNames;
     }
 
-    // SQL testing
-    @RequestMapping(value = "/insert", method = RequestMethod.GET)
-    public void doSmth(String id, String name, String surname) {
-        MySQLConfig mySQLConfig = new MySQLConfig();
-        mySQLConfig.connect();
-        mySQLConfig.insertTest(Integer.parseInt(id),name,surname);
-        mySQLConfig.closeConnection();
-    }
-
-    // SQL testing
-    @RequestMapping(value = "/US1/{id}/{name}/{surname}", method = RequestMethod.PUT)
-    public void putInTest(@PathVariable String id, @PathVariable String name, @PathVariable String surname) {
-        MySQLConfig mySQLConfig = new MySQLConfig();
-        mySQLConfig.connect();
-        mySQLConfig.insertTest(Integer.parseInt(id),name,surname);
-        mySQLConfig.closeConnection();
-    }
-
     // PUT DATA IN REGISTRATIONS TABLE
     @RequestMapping(value = "/US2/{name}/{surname}/{tel}/{email}/{bank}/{date}/{time}/{subject}/{message}", method = RequestMethod.PUT)
     public void putInRegistrations(
@@ -97,49 +79,6 @@ public class NewService {
         mySQLConfig.insertContacts(1,theme,InputMessage,first_name,last_name,phone_number,email,answer);
         mySQLConfig.closeConnection();
     }
-
-    // CHECK LOGIN
-
-//    @RequestMapping(value = "/api/authenticate/{email}/{password}/", method = RequestMethod.GET)
-//    public String getUser(
-//            @PathVariable String email, @PathVariable String password)
-//    {
-//        int userID;
-//        String uid = "";
-//        MySQLConfig mySQLConfig = new MySQLConfig();
-//        mySQLConfig.connect();
-//
-//        userID = mySQLConfig.getLogin(email,password);
-//        mySQLConfig.closeConnection();
-//
-//        if(userID == -1)
-//        {
-//            uid = "error";
-//        }
-//        else
-//        {
-//            uid = Integer.toString(userID);
-//        }
-//        return uid;
-//    }
-
-//    @RequestMapping(value = "/api/authenticate/{email}/{password}", method = RequestMethod.GET)
-//    public int doSmth(@PathVariable String email, @PathVariable String password)
-//    {
-//        int userID;
-//        String uid = "";
-//        MySQLConfig mySQLConfig = new MySQLConfig();
-//        mySQLConfig.connect();
-//
-////        email="admin@admin.lt";
-////        password="admin";
-//
-//        userID = mySQLConfig.getLogin(email,password);
-//        mySQLConfig.closeConnection();
-//
-//
-//        return userID;
-//    }
 
     // GET HISTORY TABLE FOR SPECIFIC USER
     @RequestMapping(value = "/api/history/getall/{userID}", method = RequestMethod.GET)
@@ -188,9 +127,6 @@ public class NewService {
 
         MySQLConfig mySQLConfig = new MySQLConfig();
         mySQLConfig.connect();
-
-//        email="admin@admin.lt";
-//        password="admin";
 
         temp = mySQLConfig.getLogin(person.getEmail(),person.getPassword());
         mySQLConfig.closeConnection();
