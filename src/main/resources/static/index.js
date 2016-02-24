@@ -19,42 +19,42 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'ngMessages']);
             })
             .when('/register',
             {
-            resolve: {
-                                "check": function($location, $cookies) {
-                                var login = $cookies.get('login');
-                                    if(login == null){
-                                        $location.path('/');
-                                    }
-                                }
-                            },
+                resolve: {
+                     "check": function($location, $cookies) {
+                         var login = $cookies.get('login');
+                         if(login == null){
+                            $location.path('/');
+                         }
+                     }
+                },
                 controller: 'registerController',
                 templateUrl: 'pages/registration.html'
             })
             .when('/contact',
             {
-            resolve: {
-                                "check": function($location, $cookies) {
-                                var login = $cookies.get('login');
-                                    if(login == null){
-                                        $location.path('/');
-                                    }
-                                }
-                            },
+                resolve: {
+                     "check": function($location, $cookies) {
+                         var login = $cookies.get('login');
+                         if(login == null){
+                             $location.path('/');
+                         }
+                     }
+                },
                 controller: 'contactController',
                 templateUrl: 'pages/contact.html'
             })
             .when('/history',
             {
-            resolve: {
-                                            "check": function($location, $cookies) {
-                                            var login = $cookies.get('login');
-                                                if(login == null){
-                                                    $location.path('/');
-                                                }
-                                            }
-                                        },
+                resolve: {
+                     "check": function($location, $cookies) {
+                         var login = $cookies.get('login');
+                         if(login == null){
+                         $location.path('/');
+                         }
+                     }
+                },
                 controller: 'historyController',
-                 templateUrl: 'pages/history.html'
+                templateUrl: 'pages/history.html'
             })
             .when('/home',
             {
@@ -69,20 +69,7 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'ngMessages']);
                 templateUrl: 'pages/home.html'
 
             })
-            .when('/test',
-            {
-                controller: 'ContactCtrl',
-                templateUrl: 'pages/test.html'
-            })
             .otherwise({ redirectTo: '/'});
-        });
-
-        demoApp.controller('ContactCtrl',function($scope, $http, $location)
-        {
-            $scope.UpdateData = function () {
-                    $http.put('/US1/'+$('#inputid').val()+'/'+$('#inputFirstname').val()+'/'+$('#inputLastname').val()+'/')
-                    $location.url('/home');
-                };
         });
 
         demoApp.controller('loginController', ['$cookies', '$scope', '$location', '$rootScope', '$templateCache', '$http',
@@ -185,10 +172,6 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'ngMessages']);
             };
         }]);
 
-        demoApp.controller('changeLanguage', function($scope) {
-
-        });
-
         demoApp.directive('datepicker', function() {
                     return {
                         restrict: 'A',
@@ -236,16 +219,16 @@ var demoApp = angular.module('demoApp',['ngRoute', 'ngCookies', 'ngMessages']);
             };
 
             $scope.view = function(ID) {
-                $scope.url('/api/history/view/' + userID + "/" + ID);
+                $scope.url = '/api/history/view/' + userID + "/" + ID;
                 $scope.code = null;
                 $scope.response = null;
 
                 $http({method: 'GET', url: $scope.url, cache: $templateCache}).
                 then(function(response) {
-                    $scope.statusHistory = response.status;
+                    $scope.statusView = response.status;
                     $rootScope.dataView = response.data;
                 }, function(response) {
-                    $scope.dataHistory = response.data || "Request failed";
+                    $scope.dataView = response.data || "Request failed";
                     $rootScope.statusView = response.status;
                 });
             };

@@ -1,10 +1,7 @@
 package com.example.Config;
 
-
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MySQLConfig {
     private String url = "jdbc:mysql://127.11.130.2:3306/";
@@ -32,39 +29,6 @@ public class MySQLConfig {
     public void closeConnection() {
         try {
             conn.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    public ArrayList<String> selectTest(String query) {
-        ArrayList<String> result = new ArrayList<String>();
-        String line = "";
-
-        if (query.equals(""))
-            query = "SELECT * FROM Test";
-
-        try {
-            ResultSet res = st.executeQuery(query);
-            while (res.next()) {
-                int id = res.getInt("ID");
-                String name = res.getString("name");
-                String surname = res.getString("surname");
-                line = String.valueOf(id) + ";" + name + ";" + surname;
-                result.add(line);
-            }
-        } catch (Exception e) {
-            System.out.printf(e.getMessage());
-        }
-
-        return result;
-    }
-
-    public void insertTest(int id, String name, String surname) {
-        String query = String.format("insert into Test(id, name, surname)" +
-                        "values("+id+","+name.toString()+","+surname.toString()+");");
-        try {
-            st.executeUpdate(query);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -187,5 +151,3 @@ public class MySQLConfig {
     }
 
 }
-
-
