@@ -66,15 +66,15 @@
                                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>{{ data.name }} : {{ dataView.name }}</p>
-                                        <p>{{ data.surname }} : {{ dataView.surname }}</p>
-                                        <p>{{ data.email }} : {{ dataView.email }}</p>
-                                        <p>{{ data.phone }} : {{ dataView.phoneNo }}</p>
-                                        <p>{{ data.registrationBankDepartment }} : {{ dataView.bankDepartment }}</p>
-                                        <p>{{ data.registrationDate }} : {{ dataView.registrationDate }}</p>
-                                        <p>{{ data.registrationTime }} : {{ dataView.registrationTime }}</p>
-                                        <p>{{ data.theme }} : {{ dataView.dropDownList }}</p>
-                                        <p>{{ data.registrationMessage }} : {{ dataView.message }}</p>
+                                        <p>{{ data.name }} : {{ dataView[0].name }}</p>
+                                        <p>{{ data.surname }} : {{ dataView[0].surname }}</p>
+                                        <p>{{ data.email }} : {{ dataView[0].email }}</p>
+                                        <p>{{ data.phone }} : {{ dataView[0].phoneNo }}</p>
+                                        <p>{{ data.registrationBankDepartment }} : {{ dataView[0].bankDepartment }}</p>
+                                        <p>{{ data.registrationDate }} : {{ dataView[0].registrationDate }}</p>
+                                        <p>{{ data.registrationTime }} : {{ dataView[0].registrationTime }}</p>
+                                        <p>{{ data.theme }} : {{ dataView[0].dropDownList }}</p>
+                                        <p>{{ data.registrationMessage }} : {{ dataView[0].message }}</p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
